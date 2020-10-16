@@ -1,0 +1,198 @@
+% Nothing in Introduction
+\addtocounter{section}{1}
+
+\section{Preference Relations: Basic Properties}
+
+\begin{defn}
+    The preference relation $\succsim$ is \emph{rational} if it possesses the following two properties:
+    \begin{enumerate}
+        \item \emph{Completeness}: for all $x, y \in X$ we have that $x \succsim y$ or $y \succsim x$ (or both).
+        \item \emph{Transitivity}: For all $x, y, z \in X$, if $x \succsim y$ and $y \succsim z$, then $x \succsim z$.
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}
+    The preference relation $\succsim$ on $X$ is \emph{monotone} if $x \in X$ and $y \gg x$ implies $y \succ x$. It is \emph{strongly monotone} if $y \geq x$ and $y \neq x$ imply that $y \succ x$.
+\end{defn}
+
+\begin{defn}
+    The preference relation $\succsim$ on $X$ is \emph{locally nonsatiated} if for every $x \in X$ and every $\varepsilon > 0$, there is $y \in X$ such that $||y - x || \leq \varepsilon$ and $y \succ x$.
+\end{defn}
+
+\begin{defn}
+    The preference relation $\succsim$ on $X$ is \emph{convex} if for every $x \in X$, the upper contour set $\{y \in X: y \succsim x\}$ is convex; that is, if $y \succsim x$ and $z \succsim x$, then $\alpha y + (1 - \alpha) z \succsim x$ for any $\alpha \in [0, 1]$.
+\end{defn}
+
+\begin{defn}
+    The preference relation $\succsim$ on $X$ is strictly convex if for every $x$, we have that $y \succsim x, z \succsim x$, and $y \neq z$ implies $\alpha y + (1 - \alpha) z \succ x$ for all $\alpha \in (0, 1)$.
+\end{defn}
+
+\begin{defn}
+    A monotone preference relation $\succsim$ on $X = (-\infty, \infty) \times \reals^{L - 1}_+$ is \emph{quasilinear} with respect to commodity 1 (called, in this case, the \emph{numeraire} commodity) if 
+    \begin{enumerate}
+        \item All the indifference sets are parallel displacements of each other along the axis of commodity 1. That is, if $x \sim y$, then $(x + \alpha e_1) \sim (y + \alpha e_1)$ for $e_1 = (1, 0, \dots, 0)$ and any $\alpha \in \reals$.
+        \item Good 1 is desirable; that is, $x + \alpha e_1 \succ x$ for all $x$ and $\alpha > 0$.
+    \end{enumerate}
+\end{defn}
+
+
+\section{Preference and Utility}
+
+\begin{defn}
+    The preference relation $\succsim$ on $X$ is \emph{continuous} if it is preserved under limits. That is, for any sequence of pairs $\{(x^n, y^n)\}^\infty_{n = 1}$ with $x^n \succsim y^n$ for all $n$, $x = \lim_{n \rightarrow \infty} x^n$, and $y = \lim_{n \rightarrow \infty} y^n$, we have $x \succsim y$.
+\end{defn}
+
+\begin{prop}
+    Suppose that the rational preference relation $\succsim$ on $X$ is continuous. Then there is a continuous utility function $u(x)$ that represents $\succsim$.
+\end{prop}
+
+
+\section{The Utility Maximisation Problem}
+
+\begin{prop}
+    If $p \gg 0$ and $u(\cdot)$ is continuous, then the utility maximisation problem has a solution.
+\end{prop}
+
+\begin{prop}
+    Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated preference relation $\succsim$ defined on a consumption set $X = \mathbb{R}^L_+$. Then the Walrasian demand correspondence $x(p, w)$ possesses the following properties:
+    \begin{enumerate}
+        \item \emph{Homogeneity of degree zero in $(p, w)$:} $x(\alpha p, \alpha w) = x(p, w)$ for any $p, w$ and scalar $\alpha$.
+        \item \emph{Walras' law:} $p \cdot x = w$ for all $x \in x(p, w)$.
+        \item \emph{Convexity/uniqueness:} If $\succsim$ is convex, so that $u(\cdot)$ is quasiconcave, then $x(p, w)$ is a convex set. Moreover, if $\succsim$ is \emph{strictly convex}, so that $u(\cdot)$ is strictly quasiconcave, then $x(p, w)$ consists of a single element.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated preference relation $\succsim$ defined on the consumption set $X = \mathbb{R}^L_+$. The indirect utility function $v(p, w)$ is
+    \begin{enumerate}
+        \item Homogeneous of degree zero.
+        \item Strictly increasing in $w$ and nonincreasing in $p_\ell$ for and $\ell$.
+        \item Quasiconvex; that is, the set $\{(p, w): v(p, w) \leq \bar{v}\}$ is convex for any $\bar{v}$.
+        \item Continuous in $p$ and $w$.
+    \end{enumerate}
+\end{prop}
+
+
+\section{The Expenditure Minimisation Problem}
+
+\begin{prop}
+    Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated preference relation $\succsim$ defined on the consumption set $X = \mathbb{R}^L_+$ and that the price vector is $p \gg 0$. We have
+    \begin{enumerate}
+        \item If $x^*$ is optimal in the UMP when wealth is $w > 0$, then $x^*$ is optimal in the EMP when the required utility level is $u(x^*)$. Moreover, the minimised expenditure level in this EMP is exactly $w$.
+        \item If $x^*$ is optimal in the EMP when the required utility level is $u > u(0)$, then $x^*$ is optimal in the UMP when wealth is $p \cdot x^*$. Moreover, the maximised utility level in this UMP is exactly $u$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated preference relation $\succsim$ defined on the consumption set $X = \mathbb{R}^L_+$. Then the expenditure function $e(p, u)$ is 
+    \begin{enumerate}
+        \item Homogeneous of degree one in $p$.
+        \item Strictly increasing in $u$ and nondecreasing in $p_\ell$ for any $\ell$.
+        \item Concave in $p$.
+        \item Continuous in $p$ and $u$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated preference relation $\succsim$ defined on the consumption set $X = \mathbb{R}^L_+$. Then for any $p \gg 0$, the Hicksian demand correspondence $h(p, u)$ possesses the following properties:
+    \begin{enumerate}
+        \item \emph{Homogeneity of degree zero in $p$}: $h(\alpha p, u) = h(p, u)$ for any $p, u$ and $\alpha > 0$.
+        \item \emph{No excess utility:} For any $x \in h(p, u), u(x) = u$.
+        \item \emph{Convexity/uniqueness:} If $\succsim$ is convex, then $h(p, u)$ is a convex set; and if $\succsim$ is \emph{strictly} convex, so that $u(\cdot)$ is strictly quasiconcave, then there is a unique element in $h(p, u)$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated preference relation $\succsim$ and that $h(p, u)$ consists of a single element for all $p \gg 0$. Then the Hicksian demand function $h(p, u)$ satisfies the compensated law of demand: For all $p'$ and $p''$,
+    \begin{equation*}
+        (p'' - p') \cdot [h(p'', u) - h(p', u)] \leq 0.
+    \end{equation*}
+\end{prop}
+
+
+\section{Duality: A Mathematical Introduction}
+
+\begin{defn}
+    For any nonempty closed set $K \subset \mathbb{R}^L$, the \emph{support function} of $K$ is defined for any $p \in \mathbb{R}^L$ to be 
+    \begin{equation*}
+        \mu_K(p) = \inf\{p \cdot x: x \in K\}.
+    \end{equation*}
+\end{defn}
+
+\begin{prop}[The Duality Theorem]
+    Let $K$ be a nonempty closed set, and let $\mu_K(\cdot)$ be its support function. Then there is a unique $\bar{x} \in K$ such that $\bar{p} \cdot \bar{x} = \mu_K(\bar{p})$ if and only if $\mu_K(\cdot)$ is differentiable at $\bar{p}$. Moreover, in this case,
+    \begin{equation*}
+        \nabla \mu_K(\bar{p}) = \bar{x}.
+    \end{equation*}
+\end{prop}
+
+
+\section{Relationships between Demand, Indirect Utility, and Expenditure Functions}
+
+\begin{prop}
+    Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated and strictly convex preference relation $\succsim$ defined on the consumption set $X = \mathbb{R}^L_+$. For all $p$ and $u$, the Hicksian demand $h(p, u)$ is the derivatve vector of the expenditure function with respect to prices:
+    \begin{equation*}
+        h(p, u) = \nabla_p e(p, u).
+    \end{equation*}
+    That is, $h_\ell (p, u) = \partial e(p, u) / \partial p_\ell$ for all $\ell = 1, \dots, L$.
+\end{prop}
+
+\begin{prop}
+    Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated and strictly convex preference relation $\succsim$ defined on the consumption set $X = \mathbb{R}^L_+$. Suppose also that $h(\cdot, u)$ is continuously differentiable at $(p, u)$, and denote its $L \times L$ derivative matrix by $D_p h(p, u)$. Then
+    \begin{enumerate}
+        \item $D_p h(p, u) = D_p^2 e(p, u).$
+        \item $D_p h(p, u)$ is a negative semidefinite matrix.
+        \item $D_p h(p, u)$ is a symmetric matrix.
+        \item $D_p h(p, u) p = 0$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}[The Slutsky Equation]
+    Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated and strictly convex preference relation $\succsim$ defined on the consumption set $X = \mathbb{R}^L_+$. Then for all $(p, w)$, and $u = v(p, w)$, we have 
+    \begin{equation*}
+        \frac{\partial h_\ell (p, u)}{\partial p_k} = \frac{x_\ell (p, w)}{p_k} + \frac{x_\ell (p, w)}{\partial w} x_k (p, w) \quad \text{for all } \ell, k
+    \end{equation*}
+    or equivalently, in matrix notation,
+    \begin{equation*}
+        D_p h(p, u) = D_p x(p, w) + D_w x(p, w) x(p, w)^T.
+    \end{equation*}
+\end{prop}
+
+\begin{prop}[Roy's Identity]
+    Suppose that $u(\cdot)$ is a continuous utility function representing a locally nonsatiated and stricly convex preference relation $\succsim$ defined on the consumption set $X = \mathbb{R}^L_+$. Suppose also that the indirect utility function is differentiable at $(\bar{p}, \bar{w}) \gg 0$. Then
+    \begin{equation*}
+        x(\bar{p}, \bar{w}) = - \frac{1}{\nabla_w v(\bar{p}, \bar{w})} \nabla_p v(\bar{p}, \bar{w}).
+    \end{equation*}
+    That is, for every $\ell = 1, \dots, L$:
+    \begin{equation*}
+        x_\ell (\bar{p}, \bar{w}) = - \frac{\partial v(\bar{p}, \bar{w}) / \partial p_\ell}{\partial v(\bar{p}, \bar{w}) / \partial w}.
+    \end{equation*}
+\end{prop}
+
+\begin{prop}
+    Suopose that $e(p, u)$ is strictly increasing in $u$ and is continuous, increasing, homogeneous of degree one, concave, and differentiable in $p$. Then, for every utility level $u$, $e(p, u)$ is the expenditure function associated with the at-least-as-good-as set
+    \begin{equation*}
+        V_u = \{x \in \mathbb{R}^L_+ : p \cdot x \geq e(p, u) \text{ for all } p \gg 0\}
+    \end{equation*}
+\end{prop}
+
+
+\section{Welfare Evaluation of Economic Changes}
+
+\begin{prop}
+    Suppose that the consumer has a locally nonsatiated rational preference relation $\succsim$. If $(^1 - p^0) \cdot x^0 < 0$, then the consumer is strictly better off under price wealth situation $(p^1, w)$ than under $(p^0, w)$.
+\end{prop}
+
+\begin{prop}
+    Suppose that the consumer has a differentiable expenditure function. Then if $(^1 - p^0) \cdot x^0 > 0$, there is a sufficiently small $\bar{\alpha} \in (0, 1)$ such that for all $\alpha < \bar{\alpha}$, we have $e((1 - \alpha) p^0 + \alpha p^1, u^0) > w$, and so the consumer is strictly better off under price wealth situation $(p^0, w)$ than under $((1 - \alpha) p^0 + \alpha p^1, w)$.
+\end{prop}
+
+\section{The Strong Axiom of Revealed Preference}
+
+\begin{defn}
+    The market demand function $x(p, w)$ satisfies the \emph{strong axiom of revealed preference} (the SA) if for any list
+    \begin{equation*}
+        (p^1, w^1), \dots, (p^N, w^N)
+    \end{equation*}
+    with $x(p^{n + 1}, w^{n + 1}) \neq x(p^n, w^n)$ for all $n < N - 1$, we have $p^N \cdot x(p^1, w^1) > w^N$ whenever $p^n \cdot x(p^{n + 1}, w^{n + 1}) \leq w^n$ for all $n \leq N - 1$.
+\end{defn}

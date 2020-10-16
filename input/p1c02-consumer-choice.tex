@@ -1,0 +1,80 @@
+% Nothing in Introduction
+\addtocounter{section}{3}
+
+\section{Competitive Budgets}
+
+\begin{defn}
+    The \emph{Walrasian, or competitive budget set} $B_{p, w} = \{x \in \reals^L_+ : p \cdot x \leq w\}$ is the set of all feasible consumption bundles for the consumer who faces market prices $p$ and has wealth $w$.
+\end{defn}
+
+
+\section{Demand Functions and Comparative Statics}
+
+\begin{defn}
+    The Walrasian demand correspondence $x(p, w)$ is \emph{homogeneous of degree zero} if $x(\alpha p, \alpha w) = x(p, w)$ for any $p, w$ and $\alpha > 0$.
+\end{defn}
+
+\begin{defn}
+    The Walrasian demand correspondence $x(p, w)$ satisfies Walras' law, if for every $p \gg 0$ and $w > 0$, we have $p \cdot x = w$ for all $x \in x(p, w)$.
+\end{defn}
+
+\begin{prop}
+    If the Walrasian demand function $x(p, w)$ is homogeneous of degree zero, then for all $p$ and $w$:
+    \begin{equation*}
+        \sum_{k = 1}^L \frac{\partial x_\ell(p, w)}{\partial p_k} + \frac{\partial x_{\ell}(p, w)}{\partial w}w = 0 \text{ for } \ell = 1, \dots, L.
+    \end{equation*}
+    In matrix notation, this is expressed as
+    \begin{equation*}
+        D_p x(p, w) p + D_w x(p, w) w = 0.
+    \end{equation*}
+\end{prop}
+
+\begin{prop}
+    If the Walrasian demand function $x(p, w)$ satisfies Walras' law, then for all $p$ and $w$:
+    \begin{equation*}
+        \sum_{\ell = 1}^L p_\ell \frac{\partial x_\ell (p, w)}{\partial p_k} + x_k(p, w) = 0 \text{ for } k = 1, \dots, L
+    \end{equation*}
+    or, written in matrix notion,
+    \begin{equation*}
+        p \cdot D_p x(p, w) + x(p, w)^T = 0^T.
+    \end{equation*}
+\end{prop}
+
+\begin{prop}
+    If the Walrasian demand function $x(p, w)$ satisfies Walras' law, then for all $p$ and $w$:
+    \begin{equation*}
+        \sum_{\ell = 1}^L \frac{\partial x_\ell (p, w)}{\partial w} = 1,
+    \end{equation*}
+    or, written in matrix notation,
+    \begin{equation*}
+        p \cdot D_w x(p, w) = 1.
+    \end{equation*}
+\end{prop}
+
+
+\section{The Weak Axiom of Revealed Preference and the Law of Demand}
+
+\begin{defn}
+    The Walrasian demand function $x(p, w)$ satisfies the \emph{weak axiom of revealed preference} (the WA) if the following property holds for any two price wealth situations $(p, w)$ and $(p', w')$:
+    \begin{equation*}
+        \text{If } p \cdot x(p', w') \leq w \text{ and } x(p', w') \neq x(p, w) \text{ then } p' \cdot x(p, w) > w'.
+    \end{equation*}
+\end{defn}
+
+\begin{prop}
+    Suppose the Walrasian demand function $x(p, w)$ is homogeneous of degree zero and satisfies Walras' law. Then $x(p, w)$ satisfies the weak axiom if and only if the following property holds:
+
+    For any compensated price change from an initial situation $p, w$ to a new price wealth pair $(p', w') = (p', p' \cdot x(p, w))$, we have
+    \begin{equation*}
+        (p' - p) \cdot [x(p', w') - x(p, w)] \leq 0,
+    \end{equation*}
+    with strict inequality whenever $x(p, w) \neq x(p', w')$.
+\end{prop}
+
+\begin{prop}
+    If a differentiable Walrasian demand function $x(p, w)$ satisfies Walras' law, homogeneity of degree zero, and the weak axiom, then at any $(p, w)$, the Slutsky (subsitution) matrix $S(p, w)$ satisfies $v \cdot S(p, w) v \leq 0$ and any $v \in \reals^L$.
+\end{prop}
+
+\begin{prop}
+    Suppose that the Walrasian demand function $x(p, w)$ is differentiable, homogeneous of degree zero, and satisfies Walras' law. Then $p \cdot S(p, w) = 0$ and $S(p, w)p = 0$ for any $(p, w)$.
+\end{prop}

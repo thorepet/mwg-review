@@ -1,0 +1,224 @@
+% Nothing in Introduction
+\addtocounter{section}{1}
+
+\section{Equilibrium: Definitions and Basic Equations}
+
+\begin{defn}
+    Given a private ownership economy specified by
+    \begin{equation*}
+        \left(\{(X_i, \succsim_i)\}_{i = 1}^I, \{Y_j\}_{j = 1}^J, \{(\omega_i, \theta_{i1}, \dots, \theta_{iJ})\}_{i = 1}^I\right),
+    \end{equation*}
+    an allocation $(x^*, y^*)$ and a price vector $p = (p_1, \dots, p_L)$ constitute a \emph{Walrasian} (or \emph{competitive}, or \emph{market}, or \emph{price-taking}) equilibrium if
+    \begin{enumerate}
+        \item
+        For every $j$, $y^*_j \in Y_j$ maximises profits in $Y_j$; that is
+        \begin{equation*}
+            p \cdot y_j \leq y \cdot y^*_j \quad \text{for all } y_j \in Y_j.
+        \end{equation*}
+
+        \item 
+        For every $i$, $x^*_i \in X_i$ is maximal for $\succsim_i$ in the budget set
+        \begin{equation*}
+            \{x_i \in X_i: p \cdot x_i \leq p \cdot \omega_i + \sum_j \theta_{ij} p \cdot y^*_j \}.
+        \end{equation*}
+
+        \item $\sum_i x^*_i = \sum_i \omega_i + \sum_j y^*_j$.
+    \end{enumerate}
+\end{defn}
+
+\begin{prop}
+    In a pure exchange economy in which consumer preferences are continuous, strictly convex and locally nonsatiated, $p \geq 0$ is a Walrasian equilibrium price vector if and only if:
+    \begin{equation*}
+        \sum_i \left(x_i(p, p \cdot \omega_i) - \omega_i \right) \leq 0.
+    \end{equation*}
+\end{prop}
+
+\begin{defn}
+    The \emph{excess demand function of consumer} $i$ is 
+    \begin{equation*}
+        z_i(p) = x_i(p, p \cdot \omega_i) - \omega_i,
+    \end{equation*}
+    where $x_i(p, p \cdot \omega_i)$  is consumer $i$'s Walrasian demand function. The (\emph{aggregate}) \emph{excess demand function} of the economy is
+    \begin{equation*}
+        z(p) = \sum_i z_i(p).
+    \end{equation*}
+    The domain of this function is a set of nonnegative price vectors that includes all strictly positive price vectors.
+\end{defn}
+
+\begin{prop}\label{piv.chxvii.excess-demand-properties}
+    Suppose that, for every consumer $i$, $X_i = \mathbb{R}^L_+$ and $\succsim_i$ is continuous, strictly convex, and strongly monotone. Suppose also that $\sum_i \omega_i \gg 0$. Then the aggregate excess demand function $z(p)$, defined for all price vectors $p \gg 0$, satisfies the properties:
+    \begin{enumerate}
+        \item $z(\cdot)$ is continuous.
+        \item $z(\cdot)$ is homogeneous of degree zero.
+        \item $p \cdot z(\cdot) = 0$ for all $p$ (\emph{Walras' law}).
+        \item There is an $s > 0$ such that $z_\ell(p) > -s$ for every commodity $\ell$ and all $p$.
+        \item
+        If $p^n \rightarrow p$, where $p \neq 0$ and $p_\ell = 0$ for some $\ell$, then
+        \begin{equation*}
+            \max \{z_1(p^n), \dots, z_L(p^n)\} \rightarrow \infty.
+        \end{equation*}
+    \end{enumerate}
+\end{prop}
+
+
+\section{Existence of Walrasian Equilibrium}
+
+\begin{prop}
+    Suppose that $z(p)$ is a function defined for all strictly positive price vectors $p \in \mathbb{R}^L_{++}$ and satisfying conditions (i) to (v) of Proposition \ref{piv.chxvii.excess-demand-properties}. Then the system of euqations $z(p) = 0$ has a solution. Hence, a Walrasian equilibrium exists in any pure exchange economy in which $\sum_i \omega_i \gg 0$ and every consumer has continuous, strictly convex, and strongly monotone preferences.
+\end{prop}
+
+\begin{prop}
+    Suppose that $z(p)$ is a function defined for all nonzero, nonnegative price vectors $p \in \mathbb{R}^L_+$ and satisfying conditions (i) to (iii) of Proposition \ref{piv.chxvii.excess-demand-properties} (i.e. continuity homogeneity of degree zero and Walras' law). Then there is a price vector $p^*$ such that $z(p^*) \leq 0$.
+\end{prop}
+
+
+\section{Local Uniqueness and the Index Theorem}
+
+\begin{defn}
+    An equilibrium price vector $p = (p_1, \dots, p_{L - 1})$ is \emph{regular} if the $(L - 1) \times (L - 1)$ matrix of price effects $D \hat{z}(p)$ is nonsingular, that is, has rank $L - 1$. If every normalised equilibrium price vector is regular, we say that the \emph{economy is regular}.
+\end{defn}
+
+\begin{prop}
+    Any regular (normalised) equilibrium price vector
+    \begin{equation*}
+        p = (p_1, \dots, p_{L - 1}, 1)
+    \end{equation*}
+    is \emph{locally isolated} (or \emph{locally unique}). That is, there is an $\varepsilon > 0$ such that if $p' \neq p, p'_L = p_L = 1$, and $||p' - p|| < \varepsilon$, then $z(p') \neq 0$. Moreoever, of the economy is regular, then the number of normalised equilibrium price vectors is finite.
+\end{prop}
+
+\begin{defn}
+    Suppose that $p = (p_1, \dots, p_{L - 1}, 1)$ is a regular equilibrium of the economy. Then we denote
+    \begin{equation*}
+        \text{index } p = (-1)^{L - 1} \text{sign} |D \hat{z}(p)|,
+    \end{equation*}
+    where $|D \hat{z}(p)|$ is the determinant of the $(L - 1) \times (L - 1)$ matrix $D \hat{z}(p)$.
+\end{defn}
+
+\begin{prop}[The Index Theorem]
+    For any regular economy, we have 
+    \begin{equation*}
+        \sum_{\{p: z(p) = 0, p_L = 1\}} \text{index } p = +1.
+    \end{equation*}
+\end{prop}
+
+\begin{defn}
+    The system of $M$ equations in $N$ unknowns $f(v) = 0$ is \emph{regular} if $\text{rank } Df(v) = M$ whenever $f(v) = 0$.
+\end{defn}
+
+\begin{prop}[The Transversality Theorem]
+    If the $M \times (N + S)$ matrix $D f(v; q)$ has rank $M$ whenever $f(v; q) = 0$ then for almost every $q$, the $M \times N$ matrix $D_v f(v; q)$ has rank $M$ whenever $f(v; q) = 0$.
+\end{prop}
+
+\begin{prop}
+    For any $p$ and $\omega$, $\text{rank } D_\omega \hat{z}(p; \omega) = L - 1$.
+\end{prop}
+
+\begin{prop}
+    For almost every vector of initial endowments $(\omega_1, \dots, \omega_I) \in \mathbb{R}^{LI}_{++}$, the economy defined by $\{(\succsim_i, \omega_i)\}_{i = 1}^I$ is regular.
+\end{prop}
+
+
+\section{Anything Goes: The Sonnenschein-Mantel-Debreu Theorem}
+
+\begin{prop}
+    Suppose that $I < L$. Then for any equilibrium price vector $p$ there is some direction of price change $dp \neq 0$ such that $p \cdot dp = 0$ (hence $dp$ is not proportional to $p$) and $dp \cdot Dz(p) dp \leq 0$.
+\end{prop}
+
+\begin{prop}
+    Given a price vector $p$, let $z \in \mathbb{R}^L$ be an arbitrary vector and $A$ an arbitrary $L \times L$ matrix satisfying $p \cdot z = 0$, $Ap = 0$ and $p \cdot A = -z$. Then there is a collection of $L$ consumers generating an aggregate excess demand function $z(\cdot)$ such that $z(p) = z$ and $Dz(p) = A$.
+\end{prop}
+
+\begin{prop}
+    Suppose that $z(\cdot)$ is a continuous function defined on
+    \begin{equation*}
+        P_\varepsilon = \{p \in \mathbb{R}^L_+ : p_\ell / p_{\ell'} \geq \varepsilon \text{ for every } \ell \text{ and } \ell'\}
+    \end{equation*}
+    and with values in $\mathbb{R}^L$. Assume that, in addition, $z(\cdot)$ is homogeneous of degree zero and satisfies Walras' law. Then there is an economy of $L$ consumers whose aggregate excess demand function coincides with $z(p)$ in the domain of $P_\varepsilon$.
+\end{prop}
+
+\begin{prop}
+    For any $N \geq 1$, suppose that we assign to each $n = 1, \dots, N$ a price vector $p^n$, normalised to $||p^n|| = 1$, and an $L \times L$ matrix $A_n$ of rank $L - 1$, satisfying $A_n p^n = 0$ and $p^n \cdot A_n = 0$. Suppose that, in addition, the index formula $\sum_n (-1)^{L - 1} \text{sign} | \hat{A}_n | = +1$ holds. If $L = 2$, assume also that positive and negative index equilibria alternate.
+
+    Then there is an economy with $L$ consumers such that the aggregate excess demand $z(\cdot)$ has the properties:
+    \begin{enumerate}
+        \item $z(p) = 0$ for $||p|| = 1$ if and only if $p = p^n$ for some $n$.
+        \item $D z(p^n) = A_n$ for every $n$.
+    \end{enumerate}
+\end{prop}
+
+
+\section{Uniqueness of Equilibria}
+
+\begin{prop}
+    Given an economy specified by the constant returns technology $Y$ and the aggregate excess demand function of the consumers $z(\cdot)$, a price vector $p$ is a Walrasian equilibrium price vector if and only if 
+    \begin{enumerate}
+        \item $p \cdot y \leq 0$ for every $y \in Y$, and
+        \item $z(p)$ is a feasible production; that is, $z(p) \in Y$.
+    \end{enumerate}
+\end{prop}
+
+\begin{defn}[The Weak Axiom for Excess Demand Functions]
+    The excess demand function $z(\cdot)$ satisfies the weak axiom of revealed preferences (WA) if for any pair of price vectors $p$ and $p'$, we have
+    \begin{equation*}
+        z(p) \neq z(p') \text{ and } p \cdot z(p') \leq 0 \text{ implies } p' \cdot z(p) \geq 0.
+    \end{equation*}
+\end{defn}
+
+\begin{prop}
+    Suppose that the excess demand function $z(\cdot)$ is such that, for any constant returns technology $Y$, the economy formed by $z(\cdot)$ and $Y$ has a unique (normalised) equilibrium price vector. Then $z(\cdot)$ satisfies the weak axiom. Conversely, if $z(\cdot)$ satisfies the weak axiom then, for any constant returns convex technology $Y$, the set of equilibrium price vectors is convex (and so, if the set of normalised price equilibria is finite, there can be at most one normalised price equilibrium).
+\end{prop}
+
+\begin{defn}
+    The function $z(\cdot)$ has the \emph{gross substitute} (GS) property if whenever $p'$ and $p$ are such that, for some $\ell$, $p'_\ell > p_\ell$ and $p'_k > p_k$ for $k \neq \ell$, we have $z_k(p') > z_k(p)$ for $k \neq \ell$.
+\end{defn}
+
+\begin{prop}
+    An aggregate excess demand function $z(\cdot)$ that satisfies the gross substitute property has at most one exchange equilibrium; that is, $z(p) = 0$ has at most one (normalised) solution.
+\end{prop}
+
+\begin{prop}
+    If $z(\cdot)$ is an aggregate excess demand function, $z(p) = 0$, and $Dz(p)$ has the gross substitute sign pattern, then we also have $dp \cdot Dz(p) dp < 0$ whenever $dp \neq 0$ is not proportional to $p$.
+\end{prop}
+
+\begin{prop}
+    Suppose that the initial endowment allocation $(\omega_1, \dots, \omega_I)$ constitutes a Walrasian equilibrium allocation for an exchange economy with strictly convex and strongly monotone consumer preferences (i.e., no-trade is an equilibrium). Then this is the unique equilibrium allocation.
+\end{prop}
+
+
+\section{Comparative Statics Analysis}
+
+\begin{prop}
+    Given any price vector $\bar{p}$, endowments for the first consumer of the first $L - 1$ commodities $\hat{\bar{\omega}}_1 = (\bar{\omega}_{11}, \dots, \bar{\omega}_{L - 1, 1})$, and a $(L - 1) \times (L - 1)$ nonsingular matrix $B$, there is an exchange economy formed by $L + 1$ consumers in which the first consumer has the prescribed endowments of the first $L - 1$ commodities, $\hat{z}(\bar{p}, \hat{\bar{\omega}}_1) = 0, \hat{z}(\cdot, \hat{\bar{\omega}}_1) = 0$ is regular at $\bar{p}$ and $D p(\hat{\bar{\omega}}_1) = B$.
+\end{prop}
+
+\begin{prop}
+    Suppose that $\hat{z} (\bar{p}; \bar{q}) = 0$, where $\hat{z}(\cdot)$ is differentiable. If $D_q \hat{z} (\bar{p}; \bar{q})$ is negative definite, then
+    \begin{equation*}
+        \left( D_q \hat{z} (\bar{p}; \bar{q}) dq \right) \cdot \left( D p(\bar{q}) dq \right) \geq 0 \text{ for any } dq.
+    \end{equation*}
+\end{prop}
+
+\begin{prop}
+    Suppose that $\hat{z} (\bar{p}; \bar{q}) = 0$, where $\hat{z}(\cdot; \cdot)$ is differentiable. If the $L \times L$ matrix $D_p z(\bar{p}; \bar{q})$ has negative diagonal entries and positive off-diagonal entries, then $[D_p z(\bar{p}; \bar{q})]^{-1}$ has all its entries negative.
+\end{prop}
+
+
+\section{Tâtonnement Stability}
+
+\begin{prop}
+    Suppose that $z(p^*) = 0$ and $p^* \cdot z(p) > 0$ for every $p$ not proportional to $p^*$. Then the relative prices of any solution trajectory of the differential equation 
+    \begin{equation*}
+        \frac{d p_\ell}{dt} = c_\ell z_\ell(p) \quad \text{for every } \ell
+    \end{equation*}
+    converge to the relative prices of $p^*$.
+\end{prop}
+
+\begin{defn}
+    We say that the differentiable trajectory $y(t) \in Y$ is \emph{admissible} if $p(y(t)) \cdot (dy(t)/dt) \geq 0$ for every $t$, with equality only if $y(t)$ is profit maximising for $p(y(t))$ (in which case we could say that we are at a long-run equilibrium).
+\end{defn}
+
+\begin{prop}
+    If there is a single strictly convex consumer, then any admissible trajectory converges to the (unique) equilibrium.
+\end{prop}
+
+% Nothing in Large Economies and Nonconvexities

@@ -1,0 +1,138 @@
+% Nothing in Introduction
+\addtocounter{section}{1}
+
+\section{The Basic Model and Definitions}
+
+\begin{defn}
+    An \emph{allocation} $(x, y) = (x_1, \dots, x_I, y_1, \dots, y_J)$ is a specification of a consumption vector $x_i \in X$ for each consumer $i = 1, \dots, I$ and a production vector $y_i \in Y$ for each firm $j = 1, \dots, J$. An allocation $(x, y)$ is \emph{feasible} if $\sum_i x_{\ell i} = \ddot{\omega}_\ell + \sum_j y_{\ell j}$ for every commodity $\ell$. That is, if
+    \begin{equation}
+        \sum_i x_i = \bar{\omega} + \sum_j y_j.
+    \end{equation}
+    We denote the set of feasible allocations by
+    \begin{equation*}
+        A = \left\{ (x, y) \in X_1 \times \dots \times X_I \times Y_1 \times \dots \times Y_J : \sum_i x_i = \bar{\omega} + \sum_j y_j\right\} \subset \mathbb{R}^{L(I + J)}.
+    \end{equation*}
+\end{defn}
+
+\begin{defn}
+    A feasible allocation $(x, y)$ is \emph{Pareto optimal} (or \emph{Pareto efficient}) if there is no other allocation $(x', y') \in A$ that \emph{Pareto dominates} it, that is, if there is no feasible allocation $(x', y')$ such that $x'_i \succsim_i x_i$ for all $i$ and $x'_i \succ_i x_i$ for some $i$.
+\end{defn}
+
+\begin{defn}
+    Given a private ownership economy specified by $\left(\{(X_i, \succsim_i)\}_{i = 1}^I, \{Y_j\}_{j = 1}^J), \{(\omega_i, 0_{i1}, \dots, 0_{iJ})\}_{i = 1}^I\right)$, an allocation $(x^*, y^*)$ and a price vector $p = (p_1, \dots, p_L)$ constitutes \emph{Walrasian} (or \emph{competitive}) \emph{equilibrium} if:
+    \begin{enumerate}
+        \item 
+        For every $j$, $y^*, j$ maximises profits in $Y_j$; that is
+        \begin{equation*}
+            p \cdot y_j \leq p \cdot y^*_j \quad \text{for all } y_j \in Y_j.
+        \end{equation*}
+        
+        \item 
+        For every $i$, $x^*_i$ is maximal for $\succsim_i$ in the budget set
+        \begin{equation*}
+            \left\{x_i \in X_i : p \cdot x_i \leq p \cdot \omega_i + \sum_j \theta_{ij} p \cdot y^*_j \right\}.
+        \end{equation*}
+
+        \item 
+        \begin{equation*}
+            \sum_i x^*_i = \bar{\omega} + \sum_j y^*_j.
+        \end{equation*}
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}
+    Given an economy specified by $\left(\{(X_i, \succsim_i)\}_{i = 1}^I, \{Y_j\}_{j = 1}^J), \bar{\omega}\right)$ an allocation $(x^*, y^*)$ and a price vector $p = (p_1, \dots, p_L)$ constitute a \emph{price equilibrium with transfers} of there is an assignment of wealth levels $(w_1, \dots, w_I)$ with $\sum_i w_i = p \cdot \bar{\omega} + \sum_j p \cdot y^*_j$ such that
+    \begin{enumerate}
+        \item 
+        For every $j$, $y^*, j$ maximises profits in $Y_j$; that is
+        \begin{equation*}
+            p \cdot y_j \leq p \cdot y^*_j \quad \text{for all } y_j \in Y_j.
+        \end{equation*}
+        
+        \item 
+        For every $i$, $x^*_i$ is maximal for $\succsim_i$ in the budget set
+        \begin{equation*}
+            \{x_i \in X_i : p \cdot x_i \leq \omega\}.
+        \end{equation*}
+
+        \item 
+        \begin{equation*}
+            \sum_i x^*_i = \bar{\omega} + \sum_j y^*_j.
+        \end{equation*}
+    \end{enumerate}
+\end{defn}
+
+
+\section{The First Fundamental Theorem of Welfare Economics}
+
+\begin{defn}
+    The preference relation $\succsim$ on $X$ is \emph{locally nonsatiated} if for every $x \in X$ and every $\varepsilon > 0$, there is $y \in X$ such that $||y - x || \leq \varepsilon$ and $y \succ x$.
+\end{defn}
+
+\begin{prop}[The First Fundamental Theorem of Welfare Economics]
+    If the prive $p^*$ and allocation $(x^*_1, \dots, x^*_I, y^*_1, \dots, y^*_J)$ constitutes a competitive equilibrium, then this allocation is Pareto optimal.
+\end{prop}
+
+
+\section{The Second Fundamental Theorem of Welfare Economics}
+
+\begin{defn}
+    Given an economy specified by $\left(\{(X_i, \succsim_i)\}_{i = 1}^I, \{Y_j\}_{j = 1}^J, \bar{\omega}\right)$ an allocation $(x^*, y^*)$ and a price vector $p = (p_1, \dots, p_L) \neq 0$ constitute a \emph{price quasiequilibrium with transfers} if there is an assignment of wealth levels $(w_1, \dots w_I)$ with $\sum_i w_i = p \cdot \bar{\omega} + \sum_j p \cdot y^*_j$ such that
+    \begin{enumerate}
+        \item 
+        For every $j$, $y^*, j$ maximises profits in $Y_j$; that is
+        \begin{equation*}
+            p \cdot y_j \leq p \cdot y^*_j \quad \text{for all } y_j \in Y_j.
+        \end{equation*}
+
+        \item 
+        For every $i$, if $x_i \succ x^*_i$ then $p \cdot x_i \geq w_i$.
+
+        \item 
+        \begin{equation*}
+            \sum_i x^*_i = \bar{\omega} + \sum_j y^*_j.
+        \end{equation*}
+    \end{enumerate}
+\end{defn}
+
+\begin{prop}[The Second Fundamental Theorem of Welfare Economics]
+    Consider an economy specified by $\left(\{(X_i, \succsim_i)\}_{i = 1}^I, \{Y_j\}_{j = 1}^J), \bar{\omega}\right)$, and suppose that every $Y_j$ is convex and every preference relation $\succsim_i$ is convex [i.e., the set $\{x'_i \in X_i : x'_i \succsim_i x_i\}$ is convex for every $x_i \in X$] and locally nonsatiated. Then, for every Pareto optimal allocation $(x^*, y^*)$, there is a price vector $p = (p_1, \dots, p_L) \neq 0$ such that $(x^*, y^*, p)$ is a price quasiequilibrium with transfers.
+\end{prop}
+
+\begin{prop}
+    Assume that $X_i$ is convex and $\succsim_i$ is continuous. Suppose also that the consumption vector $x^*_i \in X_i$, the price vector $p$, and the wealth level $w_i$ are such that $x_i \succ_i x^*_i$ implies $p \cdot x_i \geq w_i$. Then, if there is a consumption vector $x'_i \in X_i$ such that $p \cdot x'_i < w_i$ [a \emph{cheaper consumption} for $(p, w_i)$], it follows that $x_i \succ_i x^*_i$ implies $p \cdot x_i > w_i$.
+\end{prop}
+
+\begin{prop}
+    Suppose that for every $i$, $X_i$ is convex, $0 \in X_i$, and $\succsim_i$ is continuous. Then any price quasiequilibrium with transfers that has $(w_1, \dots, w_I) \gg 0$ is a price equilibrium with transfers.
+\end{prop}
+
+
+\section{Pareto Optimality and Social Welfare Optima}
+
+\begin{prop}
+    A feasible allocation $(x, y) = (x_1, \dots, x_I, y_1, \dots, y_J)$ is a Pareto optimum if and only if $\left(u_1(x_1), \dots, u_I(x_I) \right) \in UP$, where
+    $UP = \{u_1, \dots, u_I \in U$: there is no $(u'_1, \dots, u') \in U$ such that $u'_i \geq u_i$ for all $i$ and $u'_i > u_i$ for some $i \}$ and $U = \{(u_1, \dots, u_I) \in \mathbb{R}^I$: there is a feasible allocation $(x, y)$ such that $u_i \leq u_i(x_i)$ for $i = 1, \dots, I\}$.
+\end{prop}
+
+\begin{prop}
+    If $u^* = (u^*_1, \dots u^*_I)$ is a solution to the social welfare maximisation problem $\max_{u \in U} \lambda \cdot u$ with $\lambda \gg 0$, then $u^* \in UP$; that is, $u^*$ is the utility vector of a Pareto optimal allocation. Moreover, if the utility possibility set $U$ is convex, then for any $\tilde{u} = (\tilde{u}_1, \dots, \tilde{u}_I) \in UP$, there is a vector of welfare weights $\lambda = (\lambda_1, \dots, \lambda_I) \geq 0, \lambda \neq 0$, such that $\lambda \cdot \tilde{u} \geq \lambda \cdot u$ for all $u \in U$, that is, such that $\tilde{u}$ is a solution to the social welfare maximisation problem.
+\end{prop}
+
+
+\section{First-Order Conditions for Pareto Optimality}
+
+\begin{prop}
+    Under the assumptions made about the economy [in particular, the concavity of every $u_i(\cdot)$ and the convexity of ever $F_j(\cdot)$], every Pareto optimal allocation (and, hence, every price equilibrium with transfers) maximises a weighted sum of utilities subject to the resource and technological constraints. Moreover, the weight $\lambda_i$ of the utility of the $i$th consumer equals the reciprocal of consumer $i$'s marginal utility or wealth evaluated at the supporting prices and imputed wealth.
+\end{prop}
+
+
+\section{Some Applications}
+
+\begin{defn}
+    
+\end{defn}
+
+\begin{prop}
+    
+\end{prop}

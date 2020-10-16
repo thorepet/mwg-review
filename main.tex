@@ -1,0 +1,151 @@
+\documentclass{report} % parts and chapters, w/o asymmetric layout of book
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left = 30mm,
+	right = 30mm
+	}
+\usepackage{amsmath} % equation and its nested environments
+\usepackage{amssymb} % \succsim, ...
+\usepackage{mathrsfs} % \mathscr and \mathcal
+\usepackage{amsthm} % environments for definitions, propositions, ...
+\usepackage{accents} % \underaccent for lower bar
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{csquotes} % recommended for babel + biblatex combo
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[style=apa]{biblatex}
+\addbibresource{ref.bib}
+
+
+% Commands for common sets of numbers
+\newcommand{\reals}{\mathbb{R}} 
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\nats}{\mathbb{N}}
+\newcommand{\rats}{\mathbb{Q}}
+
+% Command for bar under letter
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+
+
+% Section numbering Alpha-numeric, as in MWG
+\renewcommand{\thesection}{\arabic{chapter}.\Alph{section}}
+% Equation numbering as in MWG
+\renewcommand{\theequation}{\arabic{chapter}.\Alph{section}.\arabic{equation}}
+
+
+% Lowercase roman enclosed in parantheses as the global enumitem option
+\setenumerate{label=(\roman*)}
+
+
+% Define environments
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem*{defn*}{Definition}
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}[section]
+
+
+% Metadata
+\title{\citetitle{mas1995microeconomic}\\\parencite{mas1995microeconomic}:\\Definitions etc.}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	This document compiles definitions, propositions, and lemmas from \citetitle{mas1995microeconomic} by \cite{mas1995microeconomic}.
+	All numberings correspond to those in the book.
+	The appendices are not included.
+\end{abstract}
+
+\tableofcontents
+
+\part{Individual Decision Making}
+
+\chapter{Preference and Choice}
+\input{input/p1c01-preference-choice.tex}
+
+\chapter{Consumer Choice}
+\input{input/p1c02-consumer-choice.tex}
+
+\chapter{Classical Demand Theory}
+\input{input/p1c03-classical-demand-theory.tex}
+
+\chapter{Aggregate Demand}
+\input{input/p1c04-aggregate-demand.tex}
+
+\chapter{Production}
+\input{input/p1c05-production.tex}
+
+\chapter{Choice Under Uncertainty}
+\input{input/p1c06-choice-uncertainty.tex}
+
+
+\part{Game Theory}
+
+\chapter{Basic Elements of Noncooperative Games}
+\input{input/p2c07-noncooperative-games.tex}
+
+\chapter{Simultaneous-Move Games}
+\input{input/p2c08-simultaneous-move.tex}
+
+\chapter{Dynamic Games}
+\input{input/p2c09-dynamic-games.tex}
+
+
+\part{Market Equilibrium and Market Failure}
+
+\chapter{Competitive Markets}
+\input{input/p3c10-competitive-markets.tex}
+
+\chapter{Externalities and Public Goods}
+\input{input/p3c11-externalities.tex}
+
+\chapter{Market Power}
+\input{input/p3c12-market-power.tex}
+
+\chapter{Adverse Selection, Signaling, and Screening}
+\input{input/p3c13-adverse-selection.tex}
+
+\chapter{The Principal-Agent Problem}
+\input{input/p3c14-principal-agent.tex}
+
+
+\part{General Equilibrium}
+
+\chapter{General Equilibrium Theory: Some Examples}
+\input{input/p4c15-general-equilibrium.tex}
+
+\chapter{Equilibrium and Its Basic Welfare Properties}
+\input{input/p4c16-equilibrium-properties.tex}
+
+\chapter{The Positive Theory of Equilibrium}
+\input{input/p4c17-positive-equilibrium.tex}
+
+\chapter{Some Foundations for Competitive Equilibria}
+\input{input/p4c18-competitive-equilibria.tex}
+
+\chapter{General Equilibrium Under Uncertainty}
+\input{input/p4c19-equilibrium-uncertainty.tex}
+
+\chapter{Equilibrium and Time}
+\input{input/p4c20-equilibrium-time.tex}
+
+
+\part{Welfare Economics and Incentives}
+
+\chapter{Social Choice Theory}
+\input{input/p5c21-social-choice.tex}
+
+\chapter{Elements of Welfare Economics and Axiomatic Bargaining}
+\input{input/p5c22-welfare-economics.tex}
+
+\chapter{Incentives and Mechanism Design}
+\input{input/p5c23-incentives.tex}
+
+\printbibliography
+
+\end{document}

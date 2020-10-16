@@ -1,0 +1,60 @@
+% Nothing in Introduction
+\addtocounter{section}{1}
+
+% Nothing in Monopoly Pricing
+\addtocounter{section}{1}
+
+
+\section{Static Models of Oligopoly}
+
+\begin{prop}
+    There is a unique Nash equilibrium $(p^*_1, p^*_2)$ in the Bertrand duopoly model. In this equilibrium, both firms set their prices equal to cost: $p^*_1 = p^*_2 = c$.
+\end{prop}
+
+\begin{prop}
+    In any Nash equilibrium of the Cournot duopoly model with cost $c > 0$ per unit for the two firms and an inverse demand function $p(\cdot)$ satisfying $p'(q) < 0$ for all $q \geq 0$ and $p(0) > c$, the market price is greater than $c$ (the competitive price) and smaller than the monopoly price.
+\end{prop}
+
+
+\section{Repeated Interaction}
+
+\begin{prop}
+    The strategies
+    \begin{equation*}
+        p_{jt} (H_{t - 1}) = \begin{cases}
+            p^m &\text{if all elements of $H_{t - 1}$ equal $(p^m, p^m)$ or $t = 1$} \\
+            c &\text{otherwise}
+        \end{cases}
+    \end{equation*}
+    constitute a subgame perfect Nash equilibrium (SPNE) of the infinitely repeated Betrand duopoly game if and only if $\delta \geq \frac{1}{2}$ in the firms optimisation problem
+    \begin{equation*}
+        \max \sum_{t = 1}^\infty \delta^{t - 1} \pi_{jt}, \quad \delta < 1.
+    \end{equation*}
+\end{prop}
+
+\begin{prop}
+    In the infinitely repeated Betrand duopoly game, when $\delta \geq \frac{1}{2}$ repeated choice of any price $p \in [c, p^m]$ can be supported as a subgame perfect Nash equilibrium outcome path using Nash reversion strategies. By contrast, when $\delta < \frac{1}{2}$, any subgame perfect Nash equilibrium outcome path must have all sales occurring at a price equal to $c$ in every period.
+\end{prop}
+
+
+\section{Entry}
+
+\begin{prop}
+    Suppose that conditions
+    \begin{enumerate}[label=(A\arabic*)]
+        \item $J q_J \geq J' q_{J'}$ whenever $J > J'$;
+        \item $q_J \leq q_{J'}$ whenever $J > J'$;
+        \item $p(J q_J) - c'(q_J) \geq 0$ for all $J$
+    \end{enumerate}
+    are satisfied by the post-entry oligopoly game, that $p'(\cdot) < 0$, and that $c''(\cdot) \geq 0$. Then the equilibrium number of entrants $J^*$, is at least $J^\circ - 1$, where $J^\circ$ is the socially optimal number of entrants.
+\end{prop}
+
+
+\section{The Competitive Limit}
+
+\begin{prop}
+    As the market size grows, the price in any subgame perfect Nash equilibrium of the two-stage Cournot entry model converges to the level of minimum average cost (the ``competitive'' price). Formally,
+    \begin{equation*}
+        \max_{p_\alpha \in P_\alpha} |p_\alpha - \bar{c}| \rightarrow 0 \; \text{as} \; \alpha \rightarrow \infty.
+    \end{equation*}
+\end{prop}

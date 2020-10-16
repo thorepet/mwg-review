@@ -1,0 +1,86 @@
+% Nothing in Introduction
+\addtocounter{section}{1}
+
+\section{Core and Equilibria}
+
+\begin{defn}
+    A coalition $S \subset I$ \emph{improves upon}, or \emph{blocks}, the feasible allocation $x^* = (x^*_1, \dots, x^*_I) \in \mathbb{R}^{LI}_+$ if for every $i \in S$ we can find a consumption $x_i \geq 0$ with the properties:
+    \begin{enumerate}
+        \item $x_i \succ_i x_i^*$ for every $i \in S$
+        \item $\sum_{i \in S} x_i \in Y + \left\{\sum_{i \in S} \omega_i \right\}$.
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}
+    We say that a feasible allocation $x^* = (x^*_1, \dots, x^*_I) \in \mathbb{R}^{LI}_+$ has the \emph{core property} if there is no coalition of consumers $S \subset I$ that can improve upon $x^*$. The \emph{core} is the set of allocations that have the core property.
+\end{defn}
+
+\begin{prop}
+    Any Walrasian equilibrium allocation has the core property.
+\end{prop}
+
+\begin{prop}
+    Denoting by $hn$ the $n$th individual of type $h$, suppose that the allocation
+    \begin{equation*}
+        x^* = (x^*_{11}, \dots, x^*_{1n}, \dots, x^*_{1N}, \dots, x^*_{H1}, \dots, x^*_{Hn}, \dots, x^*_{HN}) \in \mathbb{R}^{LHN}_+
+    \end{equation*}
+    belongs to the core of the $N$-replica economy. Then $x^*$ has the \emph{equal-treatment property}, that is, all consumers of the same type get the same consumption bundle:
+    \begin{equation*}
+        x^*_{hm} = x^*_{hn} \quad \text{for all } 1 \leq m, n \leq N \text{ and } 1 \leq h \leq H.
+    \end{equation*}
+\end{prop}
+
+\begin{prop}
+    If the feasible type allocation $x^* = (x^*_1, \dots, x^*_H) \in \mathbb{R}^{LH}_+$ has the core property for all $N = 1, 2, \dots$, that is, $x^* \in C_N$ for all $N$, then $x^*$ is a Walrasian equilibrium allocation.
+\end{prop}
+
+
+\section{Noncooperative Foundations of Walrasian Equilibria}
+
+\begin{defn}
+    The profiles of actions $a^* = (a^*_1, \dots, a^*_I) \in A_1 \times \dots \times A_I$ is a \emph{trading equilibrium} if, for every $i$,
+    \begin{equation*}
+        u_i \left( g\left( a^*_i; p(a^*)\right) + \omega_i \right) \geq u_i \left( g\left( a_i; p(a_i; a^*_{-i})\right) + \omega_i \right) \quad \text{for all } a_i \in A_i.
+    \end{equation*}
+\end{defn}
+
+
+\section{The Limits to Redistribution}
+
+\begin{defn}
+    The feasible allocation $x^* = (x^*_1, \dots, x^*_I) \in \mathbb{R}^{LI}_+$ is \emph{self-selective} (or \emph{anonymous}, or \emph{envy-free in net trades}) if there is a set of net trades $B \subset \mathbb{R}^{L}$, to be called a \emph{generalised budget set}, or a \emph{tax system}, such that, for every $i$, $z^*_i = x^*_i - \omega_i$ solves the problem
+    \begin{align*}
+        \max \, &u_i(z_i + \omega_i) \\
+        \text{s.t. } &z_i \in B, \\
+        &z_i + \omega_i \geq 0.
+    \end{align*}
+\end{defn}
+
+\begin{prop}
+    Suppose we have an exchange economy with a continuum of consumer types. Assume:
+    \begin{enumerate}
+        \item The preferences of all consumers are representable by differentiable utility functions.
+        \item The set of characteristics of consumers present in the economy cannot be split into two disconnected classes. Formally, if $\left(u(\cdot), \omega), (u'(\cdot), \omega' \right)$ are two preferences-endowment pairs present in the economy then there is a continuous function $(u(\cdot; t), \omega(t))$ of $t \in [0, 1]$ such that
+        \begin{equation*}
+            (u(\cdot; 0), \omega(0)) = (u(\cdot, \omega)), (u(\cdot; 1), \omega(1)) = (u'(\cdot), \omega),
+        \end{equation*}
+        and $(u(\cdot; t), \omega(t))$ is present in the economy for every $t$.
+    \end{enumerate}
+
+    Then any allocation $x^* = \{x^*_i\}_{i \in I}$ that is Pareto optimal, self-selective, and interior (i.e., $x^*_i \gg 0$ for all $i$) must be a Walrasian equilibrium allocation. Here $I$ is an infinite set of names.
+\end{prop}
+
+
+\section{Equilibrium and the Marginal Productivity Principle}
+
+\begin{defn}
+    Given a continuum population $\mu = (\mu_1, \dots, \mu_H) \in \mathbb{R}^{H}_+$ a feasible allocation $(x^*_1, \dots, x^*_H)$ is a \emph{marginal product}, or \emph{no-surplus}, \emph{allocation} if
+    \begin{equation*}
+        u_h (x^*_h) = \frac{\partial v(\mu)}{\partial \mu_h} \quad \text{for all } h.
+    \end{equation*}
+    In words: at a no-surplus allocation everyone is getting exactly what she contributes on the margin.
+\end{defn}
+
+\begin{prop}
+    For any \emph{continuum} population $\bar{\mu} = (\bar{\mu}_1, \dots, \bar{\mu}_H) \gg 0$ a feasible allocation $(x^*_1, \dots, x^*_H) \gg 0$ is a marginal product allocation if and only if it is a Walrasian equilibrium allocation.
+\end{prop}

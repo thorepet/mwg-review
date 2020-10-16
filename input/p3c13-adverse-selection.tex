@@ -1,0 +1,67 @@
+% Nothing in Introduction
+\addtocounter{section}{1}
+
+\section{Informational Asymmetries and Adverse Selection}
+
+\begin{defn}
+    In the competitive labour market model with unobservable worker productivity levels, a \emph{competitive equilibrium} is a wage rate $w^*$ and a set $\Theta^*$ of worker types who accept employment such that
+    \begin{align*}
+        \Theta^* &= \{\theta : r(\theta) \leq w^*\}
+        \intertext{and}
+        w^* &= E[\theta | \theta \in \Theta^*].
+    \end{align*}
+\end{defn}
+
+\begin{prop}
+    Let $W^*$ denote the set of competitive equilibrium wages for the adverse selection labour market model, and let $W^* = \max \{w : w \in W^*\}$.
+    \begin{enumerate}
+        \item If $w^* > r(\ubar{\theta})$ and there is an $\varepsilon > 0$ such that $E[\theta | r(\theta) < w'] > w'$ for all $w' \in (w^* - \varepsilon, w^*)$, then there is a unique pure strategy SPNE of the two-stage game-theoretic model. In this SPNE, employed workers receive a wage of $w^*$, and workers with types in the set $\Theta(w^*) = \{\theta : r(\theta) \leq w^*\}$ accept employment in firms.
+        \item If $w^* = r(\ubar{\theta})$, then there are multiple pure strategy SPNEs. However, in every pure strategy SPNE each agent's payoff exactly equals her payoff in the highest-wage competitive equilibrium.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    In the adverse selection labour market model (where $r(\cdot)$ is strictly increasing with $r(\theta) \leq \theta$ for all $\theta \in [\ubar{\theta}, \bar{\theta}]$ and $F(\cdot)$ has an associated density $f(\cdot)$ with $f(\theta) > 0$ for all $\theta \in [\ubar{\theta}, \bar{\theta}]$), the highest-wage competitive equilibrium is a constrained Pareto optimum.
+\end{prop}
+
+
+\section{Signaling}
+
+\begin{lem}
+    In any separating perfect Bayesian equilibrium, $w^*(e^*(\theta_H)) = \theta_H$ and $w^*(e^*(\theta_L)) = \theta_L$; that is, each worker type receives a wage equal to her productivity level.
+\end{lem}
+
+\begin{lem}
+    In any separating perfect Bayesian equilibrium, $e^*(\theta_L) = 0$; that is, a low-ability worker chooses to get no education.
+\end{lem}
+
+
+\section{Screening}
+
+\begin{prop}
+    In any SPNE of the screening game with observable worker types, a type $\theta_i$ worker accepts contract $(w^*_i, t^*_i) = (\theta_i, 0)$, and firms earn zero profits.
+\end{prop}
+
+\begin{lem}
+    In any equilibrium, whether pooling or separating, both firms must earn zero profits.
+\end{lem}
+
+\begin{lem}
+    No pooling equilibria exist.
+\end{lem}
+
+\begin{lem}
+    If $(w_L, t_L)$ and $(w_H, t_H)$ are the contracts signed by the low- and high-ability workers in a separating equilibrium, then both contracts yield zero profits; that is, $w_L = \theta_L$ and $w_H = \theta_H$.
+\end{lem}
+
+\begin{lem}
+    In any separating equilibrium, the low-ability workers accept contract $(\theta_L, 0)$; that is, they receive the same contract as when no informational imperfections are present in the market.
+\end{lem}
+
+\begin{lem}
+    In any separating equilibrium, the high-ability workers accept contract $(\theta_H, \hat{t}_H)$, where $\hat{t}_H$ satisfies $\theta_H - c(\hat{t}_H, \theta_L) = \theta_L - c(0, \theta_L)$.
+\end{lem}
+
+\begin{prop}
+    In any subgame perfect Nash equilibrium of the screening game, low-ability workers accept contract $(\theta_L, 0)$, and high-ability workers accept contract $(\theta_H, \hat{t}_H)$, where $\hat{t}_H$ satisfies $\theta_H - c(\hat{t}_H, \theta_L) = \theta_L - c(0, \theta_L)$.
+\end{prop}

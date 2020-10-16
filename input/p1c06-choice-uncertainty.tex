@@ -1,0 +1,222 @@
+% Nothing in Introduction
+\addtocounter{section}{1}
+
+\section{Expected Utility Theory}
+
+\begin{defn}
+    A \emph{simple lottery} $L$ is a list $L = (p_1, \dots, p_N)$ with $p_n \geq 0$ for all $n$ and $\sum_n p_n = 1$, where $p_n$ is interpreted as the probability of outcome $n$ occurring.
+\end{defn}
+
+\begin{defn}
+    Given $K$ simple lotteries $L_k = (p_1^k, \dots, p_N^k)$, $k = 1, \dots, K$, and probabilities $\alpha_k \geq 0$ with $\sum_k \alpha_k = 1$, the \emph{compound lottery} $(L_1, \dots, L_K; \alpha_1, \dots, \alpha_K)$ is the risky alternative that yields the simple lottery $L_k$ with probability $\alpha_k$ for $k = 1, \dots, K$.
+\end{defn}
+
+\begin{defn}
+    The preference relation $\succsim$ on the space of simple lotteries $\mathscr{L}$ is \emph{continuous} if for any $L, L', L'' \in \mathscr{L}$, the sets
+    \begin{equation*}
+        \left\{ \alpha \in [0, 1]: \alpha L + (1 - \alpha) L' \succsim L'' \right\} \subset [0, 1]
+    \end{equation*}
+    and
+    \begin{equation*}
+        \left\{ \alpha \in [0, 1]: L'' \succsim \alpha L + (1 - \alpha) L' \right\} \subset [0, 1]
+    \end{equation*}
+    are closed.
+\end{defn}
+
+\begin{defn}
+    The preference relation $\succsim$ on the space simple lotteries $\mathscr{L}$ satisfies the \emph{independence axiom} if for all $L, L', L'' \in \mathscr{L}$ and $\alpha \in (0, 1)$ we have
+    \begin{equation*}
+        L \succsim L' \quad \text{if and only if} \quad \alpha L + (1 - \alpha) L'' \succsim \alpha L' + (1 - \alpha) L''.
+    \end{equation*}
+\end{defn}
+
+\begin{defn}
+    The utility function $U : \mathscr{L} \rightarrow \mathbb{R}$ has an \emph{expected utility form} if there is an assignment of numbers $(u_1, \dots, u_N)$ to the $N$ outcomes such that for every simple lottery $L = (p_1, \dots, p_N) \in \mathscr{L}$ we have
+    \begin{equation*}
+        U(L) = u_1 p_1 + \cdots + u_N p_N.
+    \end{equation*}
+    A utility function $U : \mathscr{L} \rightarrow \mathbb{R}$ with the expected utility form is called a \emph{von Neumann-Morgenstern (v.N-M) expected utility function}.
+\end{defn}
+
+\begin{prop}
+    A utility function $U : \mathscr{L} \rightarrow \mathbb{R}$ has an expected utility form if and only if it is \emph{linear}, that is, if and only if it satisfies the property that
+    \begin{equation*}
+        U \left( \sum_{k = 1}^K \alpha_k L_k \right) = \sum_{k = 1}^K \alpha_k U(L_k)
+    \end{equation*}
+    for any $K$ lotteries $L_k \in \mathscr{L}$, $k = 1, \dots, K$, and probabilities $(\alpha_1, \dots, \alpha_K) \geq 0, \sum_k \alpha_k = 1$.
+\end{prop}
+
+\begin{prop}
+    Suppose that $U : \mathscr{L} \rightarrow \mathbb{R}$ is a v.N-M expected utility function for the preference relation $\succsim$ on $\mathscr{L}$. Then $\tilde{U} : \mathscr{L} \rightarrow \mathbb{R}$ is another v.N-M utility function for $\succsim$ if and only if there are scalars $\beta > 0$ and $\gamma$ such that $\tilde{U}(L) = \beta U(L) + \gamma$ for every $L \in \mathscr{L}$.
+\end{prop}
+
+\begin{prop}[Expected Utility Theorem]
+    Suppose that the rational preference relation $\succsim$ on the space of lotteries $\mathscr{L}$ satisfies the continuity and independence axioms. Then $\succsim$ admits a utility representation of the expected utility form. That is, we can assign a number $u_n$ to each outcome $n = 1, \dots, N$ in such a manner that for any two lotteries $L = (p_1, \dots, p_N)$ and $L' = (p_1', \dots, p_N')$ we have
+    \begin{equation*}
+        L \succsim L' \quad \text{if and only if} \quad \sum_{n - 1}^N u_n p _n \geq \sum_{n = 1}^N u_n p_n'.
+    \end{equation*}
+\end{prop}
+
+
+\section{Money Lotteries and Risk Aversion}
+
+\begin{defn}
+    A decision maker is a \emph{risk averse} (or exhibits \emph{risk aversion}) if for any lottery $F(\cdot)$, the degenerate lottery that yields the amount $\int x dF(x)$ with certainty is at least as good as the lottery $F(\cdot)$ itself. If the decision maker is always [i.e. for any $F(\cdot)$] indifferent between these two lotteries, we say that he is \emph{risk neutral}. Finally, we say that he is \emph{strictly risk averse} if indifference holds only when the two lotteries are the same [i.e. when $F(\cdot)$ is degenerate].
+\end{defn}
+
+\begin{defn}
+    Given a Bernoulli utility function $u(\cdot)$ we defined the following concepts:
+    \begin{enumerate}
+        \item The \emph{certainty equivalent of} $F(\cdot)$, denoted $c(F, u)$, is the amount of money for which the individual is indifferent between the gamble $F(\cdot)$ and the certain amount $c(F, u)$; that is 
+        \begin{equation*}
+            u\left(c(F, u)\right) = \int u(x) dF(x).
+        \end{equation*}
+
+        \item For any fixed amount of money $x$ and positive number $\varepsilon$, the \emph{probability premium} denoted by $\pi(x, \varepsilon, u)$, is the excess on winning the probability over fair odds that makes the individual indifferent between the certain outcome $x$ and a gamble between the two outcomes $x + \varepsilon$ and $x - \varepsilon$. That is 
+        \begin{equation*}
+            u(x) = \left( \frac{1}{2} + \pi(x, \varepsilon, u)\right) u(x + \varepsilon) + \left( \frac{1}{2} - \pi(x, \varepsilon, u)\right) u(x - \varepsilon).
+        \end{equation*}
+    \end{enumerate}
+\end{defn}
+
+\begin{prop}
+    Suppose a decision maker is an expected utility maximiser with a Bernoulli utility function $u(\cdot)$ on amounts of money. Then the following properties are equivalent:
+    \begin{enumerate}
+        \item The decision maker is risk averse.
+        \item $u(\cdot)$ is concave.
+        \item $c(F, u) \leq \int x dF(x)$ for all $F(\cdot)$.
+        \item $\pi(x, \varepsilon, u) \geq 0$ for all $x, \varepsilon$.
+    \end{enumerate}
+\end{prop}
+
+\begin{defn}
+    Given a (twice differentiable) Bernoulli utility function $u(\cdot)$ for money, the \emph{Arrow Pratt coefficient of absolute risk aversion} at $x$ is defined as $r_A(x) = -u''(x) / u'(x)$.
+\end{defn}
+
+\begin{defn*}[More-risk-averse-than]
+    Given two Bernoulli utility functions $u_1(\cdot)$ and $u_2(\cdot)$, when can we say that $u_2(\cdot)$ is unambiguously \emph{more risk averse than} $u_1(\cdot)$? Several possible approaches to a definition seem plausible:
+    \begin{enumerate}
+        \item $r_A(x, u_2) \geq r_A(x, u_1)$ for every $x$.
+        \item There exists an increasing concave function $\psi(\cdot)$ such that $u_2(x) = \psi(u_1(x))$ at all $x$; that is, $u_2(\cdot)$ is a concave transformation of $u_1(\cdot)$. [In other words, $u_2(\cdot)$ is ``more concave'' than $u_1(\cdot)$.]
+        \item $c(F, u_2) \leq c(F, u_1)$ for any $F(\cdot)$.
+        \item $\pi(x, \varepsilon, u_2) \geq \pi(x, \varepsilon, u_1)$ for any $x$ and $\varepsilon$.
+        \item Whenever $u_2(\cdot)$ finds a lottery $F(\cdot)$ at least as good as a riskless outcome $\bar{x}$, then $u_1(\cdot)$ also finds $F(\cdot)$ at least as good as $\bar{x}$. That is, $\int u_2(x) dF(x) \geq u_2(\bar{x})$ implies $\int u_1(x) dF(x) \geq u_1(\bar{x})$ for any $F(\cdot)$ and $\bar{x}$.
+    \end{enumerate}
+\end{defn*}
+
+\begin{prop}
+    Definitions (i) to (v) of the \emph{more-risk-averse-than} relation are equivalent.
+\end{prop}
+
+\begin{defn}
+    The Bernoulli utility function $u(\cdot)$ for money exhibits \emph{decreasing absolute risk aversion} if $r_A(x, u)$ is a decreasing function of $x$.
+\end{defn}
+
+\begin{prop}
+    The following properties are equivalent:
+    \begin{enumerate}
+        \item The Bernoulli utility function $u(\cdot)$ exhibits decreasing absolute risk aversion.
+        \item Whenever $x_2 < x_1, u_2(z) = u(x_2 + z)$ is a concave transformation of $u_1(z) = u(x_1 + z)$.
+        \item For any risk $F(z)$, the certainty equivalent of the lottery formed adding risk $z$ to wealth level $x$, given by the amount $c_x$ at which $u(c_x) = \int u(x + z) dF(z)$, is such that $(x - c_x)$ is decreasing in $x$. That is, the higher $x$ is, the less is the individual willing to pay to get rid of the risk.
+        \item The probability premium $\pi(x, \varepsilon, u)$ is decreasing in $x$.
+        \item For any $F(z)$, if $\int u(x_2 + z) dF(z) \geq u(x_2)$ and $x_2 < x_1$, then $\int u(x_1 + z) dF(z) \geq u(x_1)$.
+    \end{enumerate}
+\end{prop}
+
+\begin{defn}
+    Given a Bernoulli utility function $u(\cdot)$, the \emph{coefficient of relative risk aversion at} $x$ is $r_R(x, u) = -x u''(x) / u'(x)$.
+\end{defn}
+
+\begin{prop}
+    The following conditions for a Bernoulli utility function $u(\cdot)$ on amounts of money are equivalent:
+    \begin{enumerate}
+        \item $r_R(x, u)$ is decreasing in $x$.
+        \item Whenever $x_2 < x_1$, $\tilde{u}_2(t) = u(tx_2)$ is a concave transformation of $\tilde{u}_1(t) = u(tx_1)$.
+        \item Given any risk $F(t)$ on $t > 0$, the certainty equivalent $\bar{c}_x$ defined by $u(\bar{c}_x) = \int u(tx) dF(t)$ is such that $x / \bar{c}_x$ is decreasing in $x$.
+    \end{enumerate}
+\end{prop}
+
+
+\section{Comparison of Payoff Distributions in Terms of Return and Risk}
+
+\begin{defn}
+    The distribution $F(\cdot)$ \emph{first-order stochastically dominates} $G(\cdot)$ if, for every nondecreasing function $u : \reals \rightarrow \reals$, we have
+    \begin{equation*}
+        \int u(x) dF(x) \geq \int u(x) dG(x).
+    \end{equation*}
+\end{defn}
+
+\begin{prop}
+    The distribution of monetary payoffs $F(\cdot)$ first-order stochastically dominates the distribution $G(\cdot)$ if and only if $F(x) \leq G(x)$ for every $x$.
+\end{prop}
+
+\begin{defn}\label{pi.chvi.2-stoch-dom}
+    For any two distributions $F(\cdot)$ and $G(\cdot)$ with the same mean, $F(\cdot)$ \emph{second-order stochastically dominates} (or \emph{is less risky than}) $G(\cdot)$ if for every nondecreasing concave function $u : \reals_+ \rightarrow \reals$, we have
+    \begin{equation*}
+        \int u(x) dF(x) \geq \int u(x) dG(x).
+    \end{equation*}
+\end{defn}
+
+\begin{prop}
+    Consider two distributions $F(\cdot)$ and $G(\cdot)$ with the same mean. Then the following statements are equivalent:
+    \begin{enumerate}
+        \item $F(\cdot)$ second-order stochastically dominates $G(\cdot)$.
+        \item $G(\cdot)$ is a mean-preserving spread of $F(\cdot)$.
+        \item Property \ref{pi.chvi.2-stoch-dom} holds.
+    \end{enumerate}
+\end{prop}
+
+
+\section{State-Dependent Utility}
+
+\begin{defn}
+    A \emph{random variable} is a function $g : S \rightarrow \reals_+$ that maps states into monetary outcomes.
+\end{defn}
+
+\begin{defn}
+    The preference relation $\succsim$ has an \emph{extended expected utility representation} if for every $s \in S$, there is a function $u_s : \reals_+ \rightarrow \reals$ such that for any $(x_1, \dots, x_S) \in \mathbb{R}^{S}_+$ and $(x'_1, \dots, x'_S) \in \mathbb{R}^{S}_+$,
+    \begin{equation*}
+        (x_1, \dots, x_S) \succ (x'_1, \dots, x'_S) \quad \text{if and only if} \quad \sum_s \pi_s u_s(x_s) \geq \sum_s \pi_s u_s(x'_s).
+    \end{equation*}
+\end{defn}
+
+\begin{defn}
+    The preference relation $\succsim$ on $\mathscr{L}$ satisfies the \emph{extended independence axiom} if for all $L, L', L'' \in \mathscr{L}$ and $\alpha \in (0, 1)$ we have
+    \begin{equation*}
+        L \succsim L' \quad \text{if and only if} \quad \alpha L + (1 - \alpha) L'' \succsim \alpha L' + (1 - \alpha) L''.
+    \end{equation*}
+\end{defn}
+
+\begin{prop}[Extended Expected Utility Theorem]
+    Suppose that the preference relation $\succsim$ on the space of lotteries $\mathscr{L}$ satisfies the continuity and extended independence axioms. Then we can assign a utility function $u_s(\cdot)$ for money in every state $s$ such that for any $L = (F_1, \dots, F_S)$ and $L' = (F_1', \dots, F_S')$, we have
+    \begin{equation*}
+        L \succsim L' \quad \text{if and only if} \quad \sum_s \left(\int u_s(x_s)dF_s(x_s) \right) \geq \sum_s \left(\int u_s(x_s)dF'_s(x_s) \right).
+    \end{equation*}
+\end{prop}
+
+\begin{defn}
+    The preference relation $\succsim$ satisfies the \emph{sure-thing axiom} if, for any subset of states $E \subset S$ ($E$ is called an \emph{event}), whenever $(x_1, \dots, x_S)$ and $(x'_1, \dots, x'_S)$ differ only in the entries corresponding to $E$ (so that $x'_s = x_s$ for $s \notin E$), the preference ordering between $(x_1, \dots, x_S)$ and $(x'_1, \dots, x'_S)$ is independent of the particular (common) payoffs for states not in $E$. Formally, suppose that $(x_1, \dots, x_S), (x'_1, \dots, x'_S), (\bar{x}_1, \dots, \bar{x}_S)$, and $(\bar{x}'_1, \dots, \bar{x}'_S)$ are such that
+    \begin{align*}
+        &\text{For all } s \notin E: \quad x_s = x_s' \quad \text{and} \quad \bar{x}_s = \bar{x}_s'. \\
+        &\text{For all } s \in E: \quad x_s = \bar{x}_s \quad \text{and} \quad x_s' = \bar{x}_s'.
+    \end{align*}
+    Then $(x_1, \dots, x_S) \succsim (\bar{x}'_1, \dots, \bar{x}'_S)$ if and only if $(x_1, \dots, x_S) \succsim (x'_1, \dots, x'_S)$.
+\end{defn}
+
+\begin{prop}
+    Suppose that there are at least three states and that the preferences $\succsim$ on $\mathbb{R}^{S}_+$ are continuous and satisfy the sure-thing axiom. Then $\succsim$ admits and extended expected utility representation.
+\end{prop}
+
+
+\section{Subjective Probability Theory}
+
+\begin{defn}
+    The state preferences $(\succsim_1, \dots, \succsim_S)$ on state lotteries are \emph{state uniform} if $\succsim_s = \succsim_s'$ for any $s$ and $s'$.
+\end{defn}
+
+\begin{prop}[Subjective Expected Utility Theorem]
+    Suppose that the preference relation $\succsim$ on $\mathscr{L}$ satisfies the continuity and extended independence axioms. Suppose, in addition, that the derived state preferences are state uniform. Then there are probabilities $(\pi_1, \dots, \pi_S) \gg 0$ and a utility function $u(\cdot)$ on amounts of money such that for any $(x_1, \dots, x_S)$ and $(x_1', \dots, x_S')$ we have
+    \begin{equation*}
+        (x_1, \dots, x_S) \succsim (x_1', \dots, x_S') \quad \text{if and only if} \quad \sum_s \pi_s u(x_s) \geq \sum_s \pi_s u(x'_s).
+    \end{equation*}
+\end{prop}

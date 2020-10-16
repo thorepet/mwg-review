@@ -1,0 +1,76 @@
+% Nothing in Introduction
+\addtocounter{section}{1}
+
+\section{Pareto Optimality and Competitive Equilibria}
+
+\begin{defn}
+    An \emph{economic allocation} $(x_1, \dots, x_I, y_1, \dots, y_J)$ is a specification of a consumption vector $k_i \in X_i$ for each consumer $i = 1, \dots, I$ and a production vector $y_j \in Y_j$ for each firm $j = 1, \dots, J$. The allocation $(x_1, \dots, x_I, y_1, \dots, y_J)$ is \emph{feasible} if 
+    \begin{equation*}
+        \sum_{i = 1}^I x_{\ell i} \leq w_\ell + \sum_{j = 1}^J y_{\ell j} \quad \text{for } \ell = 1, \dots, L.
+    \end{equation*}
+\end{defn}
+
+\begin{defn}
+    A feasible allocation $(x_1, \dots, x_I, y_1, \dots, y_J)$ is \emph{Pareto optimal} (or \emph{Pareto efficient}) if there is no other feasible allocation $(x'_1, \dots, x'_I, y'_1, \dots, y'_J)$ such that $u_i(x'_i) \geq u_i(x_i)$ for all $i = 1, \dots, I$ and $u_i(x'_i) > u_i(x_i)$ for some $i$.
+\end{defn}
+
+\begin{defn}
+    The allocation $(x^*_1, \dots, x^*_I, y^*_1, \dots, y^*_J)$ and price vector $p^* \in \mathbb{R}^L$ constitute a \emph{competitive} (or \emph{Walrasian}) \emph{equilibrium} if the following conditions are satisfied:
+    \begin{enumerate}
+        \item 
+        \emph{Profit maximisation:} For each firm $j$, $y^*_j$ solves
+        \begin{equation}
+            \max_{y_j \in Y_ij} p^* \cdot y_j.
+        \end{equation}
+
+        \item 
+        \emph{Utility maximisation:} For each consumer $i$, $x^*_i$ solves
+        \begin{equation}
+            \begin{split}
+                \max_{x_i \in X_i} &u_i(x_i) \\
+                &\text{s.t. } p^* \cdot x_i \leq p^* \cdot \omega_i + \sum_{j = 1}^J \theta_{ij} (p^* \cdot y^*_j).
+            \end{split}
+        \end{equation}
+
+        \item 
+        \emph{Market clearing:} For each good $\ell = 1, \dots, L$,
+        \begin{equation}\label{piii.chx.market-clearing}
+            \sum_{i = 1}^I x^*_{\ell i} = \omega_\ell + \sum_{j = 1}^J y^*_{\ell j}.
+        \end{equation}
+    \end{enumerate}
+\end{defn}
+
+\begin{lem}
+    If the allocation $(x_1, \dots, x_I, y_1, \dots, y_J)$ and price vector $p \gg 0$ satisfy the market clearing condition (Definition \ref{piii.chx.market-clearing}) for all goods $\ell \neq k$, and if every consumer's budget constraint is satisfied with equality, so that $p \cdot x_i = p \cdot w_i + \sum_j \theta_{ij} p \cdot y_j$ for all $i$, then the market for good $k$ also clears.
+\end{lem}
+
+
+% Nothing in Partial Equilibrium Competitive Analysis
+\addtocounter{section}{1}
+
+
+\section{The Fundamental Welfare Theorems in a Partial Equilibrium Context}
+
+\begin{prop}[The First Fundamental Theorem of Welfare Economics]
+    If the prive $p^*$ and allocation $(x^*_1, \dots, x^*_I, y^*_1, \dots, y^*_J)$ constitutes a competitive equilibrium, then this allocation is Pareto optimal.
+\end{prop}
+
+\begin{prop}[The Second Fundamental Theorem of Welfare Economics]
+    For any Pareto optimal levels of utility $(u^*_1, \dots, u^*_I)$, there are transfers of the numeraire commodity $(T_1, \dots, T_I)$ satisfying $\sum_i T_i = 0$, such that a competitive equilibrium reached from the endowments $\omega_{m1} + T_1, \dots, \omega_{mI} + T_I$ yields precisely the utilities $(u^*_1, \dots, u^*_I)$.
+\end{prop}
+
+
+% Nothing in Welfare Analysis in the Partial Equilibrium Model
+\addtocounter{section}{1}
+
+
+\section{Free Entry and Long-Run Competitive Equilibria}
+
+\begin{defn}
+    Given an aggregate demand function $x(p)$ and a cost function $c(q)$ for each potentially active firm having $c(0) = 0$, a triple $(p^*, q^*, J^*)$ is a \emph{long-run competitive equilibrium} if
+    \begin{enumerate}
+        \item $q^*$ solves $\max_{q > 0} p^* q - c(q)$ (Profit maximisation)
+        \item $x(p^*) = J^* q^*$ (Demand $=$ supply)
+        \item $p^* q^* - c(q^*) = 0$ (Free Entry Condition).
+    \end{enumerate} 
+\end{defn}
