@@ -121,6 +121,7 @@
 
 
 \section{First-Order Conditions for Pareto Optimality}
+\label{piv.chxvi.pareto-focs}
 
 \begin{prop}
     Under the assumptions made about the economy [in particular, the concavity of every $u_i(\cdot)$ and the convexity of ever $F_j(\cdot)$], every Pareto optimal allocation (and, hence, every price equilibrium with transfers) maximises a weighted sum of utilities subject to the resource and technological constraints. Moreover, the weight $\lambda_i$ of the utility of the $i$th consumer equals the reciprocal of consumer $i$'s marginal utility or wealth evaluated at the supporting prices and imputed wealth.
@@ -130,9 +131,27 @@
 \section{Some Applications}
 
 \begin{defn}
-    
+    A \emph{Lindahl equilibrium} for the public goods economy is a price equilibrium with transfers for the artificial economy with personalised commodities. That is, an allocation $(x^*_1), \dots, x^*_I, q^*, z^* \in \reals^{2I} \times \reals \times \reals$ and a price system $(p_1, p_{21}, \dots, p_{2I}) \in \reals^{I + 1}$ constitutes a Lindahl equilibrium if there is a set of wealth levels $(w_1, \dots, w_I)$ satisfying $\sum_i w_i = \sum_i p_1 x^*_{1i} + (\sum_i p_{2i}) q^* - p_1 z^*$ and such that
+    \begin{enumerate}
+        \item $q^* \leq f(z^*)$ and $(\sum_i p_{2i}) q^* - p_1 z^* \geq (\sum_i p_{2i}) q - p_1 z$ for all $(q, z)$ with $z \geq 0$ and $q \leq f(z)$.
+        \item For every $i$, $x^*_i = (x^*_{1i}, x^*_{2i})$ is maximal for $\succsim_i$ in the set $\{(x_{1i}, x_{2i}) \in X_i: p_1 x_{1i} + p_2 x_{2i} \leq w_i\}$.
+        \item $\sum_i x^*_{1i} + z^* = \bar{\omega}_1$ and $x^*_{2i} = q^*$ for every $i$.
+    \end{enumerate}
 \end{defn}
 
 \begin{prop}
-    
+    Suppose that the basic assumptions of Section \ref{piv.chxvi.pareto-focs} hold and that, in addition, all consumers have convex preferences (so utility functions are quasiconcave). If $(x^*, y^*)$ is Pareto optimal, then there exists a price vector $p = (p_1, \dots, p_L)$ and wealth levels $w = (w_1, \dots, w_I)$ with $\sum_i w_i = p \cdot \bar{\omega} + \sum_j p \cdot y^*_j$ such that:
+    \begin{enumerate}
+        \item For any firm $j$, we have
+        \begin{equation*}
+            p = \gamma_j \nabla F_j (y^*_j) \quad \text{for some } \gamma_j > 0.
+        \end{equation*}
+
+        \item For any $i$, $x^*_i$ is maximal for $\succsim_i$ in the budget set
+        \begin{equation*}
+            \{x_i \in X: p \cdot x_i \leq w_i\}.
+        \end{equation*}
+
+        \item $\sum_i x^*_i = \bar{\omega} + \sum_j y^*_j$.
+    \end{enumerate}
 \end{prop}
