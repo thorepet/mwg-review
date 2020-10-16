@@ -1,3 +1,97 @@
 % Nothing in Introduction
 \addtocounter{section}{1}
 
+\section{Hidden Actions (Moral Hazard)}
+
+\begin{prop}
+    In the principal-agent model with observable managerial effort, an optimal contract specifies that the manager chooses the effort $e^*$ that maximises $\left[ \int \pi f(\pi | e) d \pi - v^{-1}(\bar{u} + g(e))\right]$ and pays the manager a fixed ware $w^* = v^{-1}(\bar{u} + g(e^*))$. This is the uniquely optimal contract if $v''(w) < 0$ at all $w$.
+\end{prop}
+
+\begin{prop}
+    In the principal-agent model with unobservable managerial effort and a risk-neutral manager, an optimal contract generates the same effort choice and expected utilities for the manager and the owner as when effort is observable.
+\end{prop}
+
+\begin{lem}
+    In any solution to the problem
+    \begin{equation*}
+        \begin{aligned}
+            \min_{w(\pi)} &\int w(\pi) f(\pi | e) d \pi \\
+            % &\text{s.t. }
+            &\begin{aligned}
+                \text{s.t. (i) } &\int v\left(w(\pi)\right) f(\pi |e) d \pi - g(e) \geq \bar{u} \\
+                \text{(ii) } &e \text{ solves } \max_{\tilde{e}} \int v\left(w(\pi)\right) f(\pi | \tilde{e}) d \pi - g(\tilde{e})
+            \end{aligned}
+        \end{aligned}
+    \end{equation*}
+    with $e = e_H$, both $\gamma > 0$ and $\mu > 0$.
+\end{lem}
+
+\begin{prop}
+    In the principal-agent model with unobservable manager effort, a risk-averse manager, and two possible effort choices, the optimal compensation scheme for implementing $e_H$ satisfies
+    \begin{equation*}
+        \begin{matrix}
+            1 \\
+            v'\left(w(\pi)\right)
+        \end{matrix}
+        = \gamma + \mu
+        \left[1 - \begin{matrix}
+            f(\pi | e_L) \\
+            f(\pi | e_H)
+        \end{matrix}\right],
+    \end{equation*}
+    gives the manager expected utility $\tilde{u}$, and involves a larger expected wage payment than is required when effort is observable. The optimal compensation scheme for implementing $e_L$ involves the same fixed wage payment as if effort were observable. Whenever the optimal effort level with observable effort would be $e_H$, nonobservability causes a welfare loss.
+\end{prop}
+
+
+\section{Hidden Information (and Monopolistic Screening)}
+
+\begin{prop}
+    In the principal-agent model with an observable state variable $\theta$, the optimal contract involves an effort level $e^*_i$ in state $\theta_i$ such that $\pi(e^*_i) = g_e(e^*_i, \theta)$ and fully insures the manager, setting his wage in each state $\theta_i$ at the level $w^*_i$ such that $v\left(w^*_i - g(e^*_i, \theta_i)\right) = \bar{u}$.   
+\end{prop}
+
+\begin{prop}[The Revelation Principle]
+    Denote the set of possible states by $\Theta$. In searching for an optimal contract, the owner can without loss restrict himself to contracts of the following form:
+    \begin{enumerate}
+        \item After the state $\theta$ is realised, the manager is required to announce which state has occurred.
+        \item The contract specifies an outcome $[w(\hat{\theta}), e(\hat{\theta})]$ for each possible announcement $\hat{\theta} \in \Theta$.
+        \item In every state $\theta \in \Theta$, the manager finds is optimal to report the state \emph{truthfully}.
+    \end{enumerate}
+\end{prop}
+
+\begin{lem}\label{piii.chxiv.optimal-contract}
+    In the problem 
+    \begin{equation*}
+        \begin{aligned}
+            \max_{w_H, e_H \geq 0, w_L, e_L > 0} &\lambda [\pi(e_H) - w_H] + (1 - \lambda) [\pi(e_L) - w_L] \\
+            &\begin{aligned}
+                \text{s.t. (i) } &w_L - g(e_L, \theta_L) \geq v^{-1}(\bar{u}) \\
+                \text{(ii) } &w_H - g(e_H, \theta_H) \geq v^{-1}(\bar{u}) \\
+                &\text{(\emph{reservation utility} (or \emph{individual rationality}) \emph{constraint})} \\
+                \text{(iii) } & w_H - g(e_H, \theta_H) \geq w_L - g(e_L, \theta_H) \\
+                \text{(iv) } &w_L - g(e_L, \theta_L) \geq w_H - g(e_H, \theta_L) \\
+                &\text{(\emph{incentive compatibility} (or \emph{truth-telling} or \emph{self-selection}) \emph{constraints})}
+            \end{aligned}
+        \end{aligned}
+    \end{equation*}
+    we can ignore constraint (ii). That is, a contract is a solution to the problem if and only if it is the solution to the problem derived from it by dropping (ii).
+\end{lem}
+
+\begin{lem}
+    An optimal contract in the problem given in Lemma \ref{piii.chxiv.optimal-contract} must have $w_L - g(e_L, \theta_L) = v^{-1}(\bar{u})$.
+\end{lem}
+
+\begin{lem}
+    In any optimal contract:
+    \begin{enumerate}
+        \item $e_L \leq e^*_L$; that is, the manager's effort level in state $\theta_L$ is no more than the level that would arise if $\theta$ were observable.
+        \item $e_H = e^*_H$; that is, the manager's effort level in state $\theta_H$ is exactly equal to the level that arise if $\theta$ were observable.
+    \end{enumerate}
+\end{lem}
+
+\begin{lem}
+    In any optimal contract, $e_L < e^*_L$; that is, the effort level in state $\theta_L$ is necessarily \emph{strictly} below the level that would arise in state $\theta_L$ if $\theta$ were observable.
+\end{lem}
+
+\begin{prop}
+    In the hidden information principal-agent model with an infinitely risk-averse manager the optimal contract sets the level of effort in state $\theta_H$ at its first-best (full observability) level $e^*_H$. The effort level in state $\theta_L$ is distorted downward from its first-best level $e^*_L$. In addition, the manager is inefficiently insured, receiving a utility greater than $\bar{u}$ in state $\theta_H$ and a utility equal to $\bar{u}$ in state $\theta_L$. The owner's expected payoff is strictly lower than the expected payoff he receives when $\theta$ is observable, while the infinitely risk-averse manager's expected utility is the same as when $\theta$ is observable (it equals $\bar{u}$).
+\end{prop}
