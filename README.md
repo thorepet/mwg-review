@@ -3,7 +3,7 @@
 ## Idea
 This document compiles the definitions, propositions, and lemmas from everyone's favourite Micro textbook.
 
-You can not `Cmd+F` in the scanned PDF, but here you can.
+You cannot `Cmd+F` in the scanned PDF, but here you can.
 
 ## Structure
 The content is copied verbatim (including italics).
@@ -15,7 +15,7 @@ The document is not finished.
 *Part 2: Game Theory* will not be included (Rubinstein's notes are available as PDF).
 *Part 5: Welfare Economics and Incentives* will be covered if I have spare time.
 
-Part 4 is missing some chapters.
+Part 4 is missing a chapter.
 
 ## If you are bored
 Pull requests, or issues are appreciated, should you find any typos etc.
