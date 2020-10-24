@@ -45,7 +45,7 @@
         For every $i$, the consumption plans $z^*_i, x^*_i$ solve the problem
         \begin{equation*}
             \begin{aligned}
-                \max_{(x_{1i}, \dots, x_{Si}) \in \mathbb{R}^{LS}_+ \atop (z_{1i}, \dots, z_{Si}) \in \mathbb{R}^{S}} & U_i(x_{1i}, \dots, x_{Si})\\
+                \max_{\genfrac{}{}{0pt}{}{(x_{1i}, \dots, x_{Si}) \in \mathbb{R}^{LS}_+}{(z_{1i}, \dots, z_{Si}) \in \mathbb{R}^{S}}} & U_i(x_{1i}, \dots, x_{Si})\\
                 &\begin{aligned}
                     \text{s.t. (i) } & \sum_s q_s z_{si} \leq 0, \\
                     \text{(ii) } & p_s \cdot x_{si} \leq p_s \omega_{si} + p_{1s} z_{si} \quad \text{for every } s.
@@ -80,7 +80,7 @@
         For every $i$, the consumption plans $z^*_i, x^*_i$ solve the problem
         \begin{equation*}
             \begin{aligned}
-                \max_{(x_{1i}, \dots, x_{Si}) \in \mathbb{R}^{LS}_+ \atop (z_{1i}, \dots, z_{Si}) \in \mathbb{R}^{K}} & U_i(x_{1i}, \dots, x_{Si})\\
+                \max_{\genfrac{}{}{0pt}{}{(x_{1i}, \dots, x_{Si}) \in \mathbb{R}^{LS}_+}{(z_{1i}, \dots, z_{Ki}) \in \mathbb{R}^{K}}} & U_i(x_{1i}, \dots, x_{Si})\\
                 &\begin{aligned}
                     \text{s.t. (i) } & \sum_k q_k z_{ki} \leq 0, \\
                     \text{(ii) } & p_s \cdot x_{si} \leq p_s \omega_{si} + \sum_k p_{1s} z_{ki} r_{sk} \quad \text{for every } s.
