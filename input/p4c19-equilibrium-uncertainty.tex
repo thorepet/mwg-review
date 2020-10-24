@@ -2,4 +2,160 @@
 \addtocounter{section}{1}
 
 \section{A Market Economy with Contingent Commodities: Description}
-p688
+
+\begin{defn}
+    For every physical commodity $\ell = 1, \dots, L$ and states $s = 1, \dots, S$, a unit of (\emph{state-})\emph{contingent commodity $\ell$s} is a title to receive a unit of physical good $\ell$ if and only if $s$ occurs. Accordingly, a (\emph{state-})\emph{contingent commodity vector} is specified by
+    \begin{equation*}
+        x = (x_{11}, \dots, x_{L1}, \dots, x_{1S}, \dots, x_{LS}) \in \mathbb{R}^{LS},
+    \end{equation*}
+    and is understood as an entitlement to receive the commodity vector $x = (x_{1s}, \dots, x_{Ls})$ if state $s$ occurs.
+\end{defn}
+
+
+\section{Arrow-Debreu Equilibrium}
+
+\begin{defn}
+    An allocation
+    \begin{equation*}
+        (x^*_1, \dots, x^*_I, y^*_1, \dots, y^*_J) \in X_1 \times \dots \times X_I \times Y_1 \times \dots \times Y_J \subset \mathbb{R}^{LS(I + J)}
+    \end{equation*}
+    and a system of prices for the contingent commodities $p = (p_{11}, \dots, p_{LS}) \in \mathbb{R}^{LS}$ constitute an \emph{Arrow-Debreu equilibrium} if:
+    \begin{enumerate}
+        \item For every $j$, $y^*_j$ satisfies $p \cdot y^*_j \geq p \cdot y_j$ for all $y_j \in Y_j$.
+        \item 
+        For every $i$, $x^*_i$ is maximal for $\succsim_i$ in the budget set
+        \begin{equation*}
+            \{x_i \in X_i: p \cdot x_i \leq p \cdot \omega_i + \sum_j \theta_{ij} p \cdot y^*_j\}.
+        \end{equation*}
+        \item $\sum_i x^*_i = \sum_j y^*_j + \sum_i \omega_i$.
+    \end{enumerate}
+\end{defn}
+
+
+\section{Sequential Trade}
+
+\begin{defn}
+    A collection formed by a price vector $q = (q_1, \dots, q_S) \in \mathbb{R}^{S}$ for contingent first good commodities at $t = 0$, a spot price vector
+    \begin{equation*}
+        p_s = (p_{1s}, \dots, p_{Ls}) \in \mathbb{R}^{L}
+    \end{equation*}
+    for every $s$, and, for every consumer $i$, consumption plans $z^*_i = (z^*_{1i}, \dots, z^*_{Si}) \in \mathbb{R}^{S}$ at $t = 0$ and $x^*_i = (x^*_{1i}, \dots, x^*_{Si}) \in \mathbb{R}^{LS}$ at $t = 1$ constitute a \emph{Radner equilibrium} if:
+    \begin{enumerate}
+        \item 
+        For every $i$, the consumption plans $z^*_i, x^*_i$ solve the problem
+        \begin{equation*}
+            \begin{aligned}
+                \max_{(x_{1i}, \dots, x_{Si}) \in \mathbb{R}^{LS}_+ \atop (z_{1i}, \dots, z_{Si}) \in \mathbb{R}^{S}} & U_i(x_{1i}, \dots, x_{Si})\\
+                &\begin{aligned}
+                    \text{s.t. (i) } & \sum_s q_s z_{si} \leq 0, \\
+                    \text{(ii) } & p_s \cdot x_{si} \leq p_s \omega_{si} + p_{1s} z_{si} \quad \text{for every } s.
+                \end{aligned}
+            \end{aligned}
+        \end{equation*}
+
+        \item 
+        $\sum_i z^*_{si} \leq 0$ and $\sum_i x^*_{si} \leq \sum_i \omega_{si}$ for every $s$.
+    \end{enumerate}
+\end{defn}
+
+\begin{prop}
+    We have:
+
+    (i) If the allocation $x^* \in \mathbb{R}^{LSI}$ and the contingent commodities price vector $(p_1, \dots, p_S) \in \mathbb{R}^{LS}_{++}$ constitute and Arrow-Debreu equilibrium, then there are prices $q \in \mathbb{R}^{S}_{++}$ for contingent first good commodities and consumption plans for these commodities $z^* = (z^*_{1}, \dots, z^*_{I}) \in \mathbb{R}^{SI}$ such that the consumption plans $x^*, z^*$, the prices $q$, and the spot prices $(p_1, \dots, p_S)$ constitute a Radner equilibrium.
+
+    (ii) Conversely, if the consumption plans $x^* \in \mathbb{R}^{LSI}$, $z^* \in \mathbb{R}^{SI}$ and prices $q \in \mathbb{R}^{S}_{++}$, $(p_1, \dots, p_S) \in \mathbb{R}^{LS}_{++}$ constitute a Radner equilibrium, then there are multipliers $(\mu_1, \dots, \mu_S) \in \mathbb{R}^{S}_{++}$ such that the allocation $x^*$ and the contingent commodities price vector $(\mu_1 p_1, \dots, \mu_S p_S) \in \mathbb{R}^{LS}_{++}$ constitute an Arrow-Debreu equilibrium. (The multiplier $\mu_s$ is interpreted as the value, at $t = 0$, of a dollar at $t = 1$ and state $s$.)
+\end{prop}
+
+
+\section{Asset Markets}
+
+\begin{defn}
+    A unit of an \emph{asset}, or \emph{security}, is a title to receive an amount $r_s$ of good 1 at date $t = 1$ if state $s$ occurs. An asset is therefore characterised by its \emph{return vector} $r = (r_1, \dots, r_S) \in \mathbb{R}^{S}$.
+\end{defn}
+
+\begin{defn}
+    A collection formed by a price vector $q = (q_1, \dots, q_K) \in \mathbb{R}^{K}$ for assets traded at $t = 0$, a spot price vector $p_s = (p_{1s}, \dots, p_{Ls}) \in \mathbb{R}^{L}$ for every $s$, and, for every consumer $i$, portfolio plans $z^*_i = (z^*_{1i}, \dots, z^*_{Ki}) \in \mathbb{R}^{K}$ at $t = 0$ and consumption plans $x^*_i = (x^*_{1i}, \dots, x^*_{Si}) \in \mathbb{R}^{LS}$ at $t = 1$ constitutes a \emph{Radner equilibrium} if:
+    \begin{enumerate}
+        \item 
+        For every $i$, the consumption plans $z^*_i, x^*_i$ solve the problem
+        \begin{equation*}
+            \begin{aligned}
+                \max_{(x_{1i}, \dots, x_{Si}) \in \mathbb{R}^{LS}_+ \atop (z_{1i}, \dots, z_{Si}) \in \mathbb{R}^{K}} & U_i(x_{1i}, \dots, x_{Si})\\
+                &\begin{aligned}
+                    \text{s.t. (i) } & \sum_k q_k z_{ki} \leq 0, \\
+                    \text{(ii) } & p_s \cdot x_{si} \leq p_s \omega_{si} + \sum_k p_{1s} z_{ki} r_{sk} \quad \text{for every } s.
+                \end{aligned}
+            \end{aligned}
+        \end{equation*}
+
+        \item 
+        $\sum_i z^*_{ki} \leq 0$ and $\sum_i x^*_{si} \leq \sum_i \omega_{si}$ for every $k$ and $s$.
+    \end{enumerate}
+\end{defn}
+
+\begin{prop}
+    Assume that every return vector is nonnegative and nonzero; that is, $r_k \geq 0$ and $r_k \neq 0$ for all $k$. Then, for every (column) vector $q \in \mathbb{R}^{K}$ of asset prices arising in a Radner equilibrium, we can find multipliers $\mu = (\mu_1, \dots, \mu_S) \geq 0$, such that $q_k = \sum_s \mu_s r_{sk}$ for all $k$ (in matrix notation, $q^T = \mu \cdot R$).
+\end{prop}
+
+\begin{defn}
+    An asset structure with an $S \times K$ return matrix $R$ is \emph{complete} of $\text{rank}R = S$, that is, if there is some subset of $S$ assets with linearly independent returns.
+\end{defn}
+
+\begin{prop}
+    Suppose that the asset structure is complete. Then:
+    \begin{enumerate}
+        \item 
+        If the consumption plans $x^* = (x^*_1, \dots, x^*_I) \in \mathbb{R}^{LSI}$ and the price vector 
+        \begin{equation*}
+            (p_1, \dots, p_S) \in \mathbb{R}^{LS}_{++}
+        \end{equation*}
+        constitute an Arrow-Debreu equilibrium, then there are asset prices $q \in \mathbb{R}^{K}_{++}$ and portfolio plans $z^* = (z^*_1, \dots, z^*_I) \in \mathbb{R}^{KI}$ such that the consumption plans $x^*$, portfolio plans $z^*$, asset prices $q$, and spot prices $(p_1, \dots, p_S)$ constitute a Radner equilibrium.
+
+        \item 
+        Conversely, if the consumption plans $x^* \in \mathbb{R}^{LSI}$, portfolio plans $z^* \in \mathbb{R}^{KI}$, and prices $q \in \mathbb{R}^{K}_{++}, (p_1, \dots, p_S) \in \mathbb{R}^{LS}_{++}$ constitute a Radner equilibrium, then there are multipliers $\mu = (\mu_1, \dots, \mu_S) \in \mathbb{R}^{S}_{++}$ such that consumption plans $x^*$ and the contingent commodities price vector $(\mu_1 p_1, \dots, \mu_S p_S) \in \mathbb{R}^{LS}_{++}$ constitute an Arrow-Debreu equilibrium. (The multiplier $\mu_s$ is interpreted as the value, at $t = 0$, of a dollar at $t = 1$ and state $s$; recall that $p_{1s} = 1$.)
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    Suppose that the asset price vector $q \in \mathbb{R}^{K}$, the spot prices $p = (p_{1}, \dots, p_{S}) \in \mathbb{R}^{LS}$, the consumption plans $x^* = (x^*_{1}, \dots, x^*_{I}) \in \mathbb{R}^{LSI}_+$, and the portfolio plans $(z^*_1, \dots, z^*_I) \in \mathbb{R}^{KI}$ constitute a Radner equilibrium for an asset structure with $S \times K$ return matrix $R$. Let $R'$ be the $S \times K'$ return matrix of a second asset structure. If $\text{range}R' = \text{range}R$, then $x^*$ is still the consumption allocation of a Radner equilibrium in the economy with the second asset structure.
+\end{prop}
+
+
+\section{Incomplete Markets}
+
+\begin{defn}
+    The asset allocation $(z_1, \dots, z_I) \in \mathbb{R}^{KI}$ is constrained Pareto optimal if it is feasible (i.e. $\sum_i z_i \leq 0$) and if there is no other feasible asset allocation $(z'_1, \dots, z'_I) \in \mathbb{R}^{KI}$ such that
+    \begin{equation*}
+        U^*_i(z'_1, \dots, z'_I) \geq U^*_i(z_1, \dots, z_I) \quad \text{for every } j,
+    \end{equation*}
+    with at least one inequality strict.
+\end{defn}
+
+\begin{prop}
+    Suppose that there are two periods and only one consumption good in the second period. Then any Radner equilibrium is \emph{constrained Pareto optimal} in the sense that there is no possible redistribution of assets in the first period that leaves every consumer as well off and at least one consumer strictly better off.
+\end{prop}
+
+
+\section{Firm Behaviour in General Equilibrium Models under Uncertainty}
+
+\begin{defn}
+    A set $A \subset \mathbb{R}^{S}$ of random variables is \emph{spanned} by a given asset structure of every $a \in A$ is in the range of the return matrix $R$ of the asset structure, that is, if every $a \in A$ can be expressed as a linear combination of the available asset returns.
+\end{defn}
+
+
+\section{Imperfect Information}
+
+\begin{defn}
+    The signal function $\sigma': S \rightarrow \reals$ is \emph{at least as informative} as $\sigma: S \rightarrow \reals$ if $\sigma(s) \neq \sigma(s')$ implies $\sigma'(s) \neq \sigma'(s')$ for any pair $s, s'$. It is \emph{more informative} if, in addition, $\sigma'(s) \neq \sigma'(s')$ for some pair $s, s'$ with $\sigma(s) = \sigma(s')$.
+\end{defn}
+
+\begin{prop}
+    In the single-consumer problem, if the signal function $\sigma'(\cdot)$ is at least as informative as the signal function $\sigma(\cdot)$, then the ex ante utility derived from $\sigma'(\cdot)$, $\sum_s \pi_{si} u_{si} (x_{si}^{\sigma'(\cdot)})$, is at least as large as the ex ante utility derived from $\sigma(\cdot)$, $\sum_s \pi_{si} u_{si} (x_{si}^{\sigma(\cdot)})$.
+\end{prop}
+
+\begin{defn}
+    The price function $p(\cdot)$ is a \emph{rational expectations equilibrium price function} if, for every $s$, $p(s)$ clears the spot market when every consumer $i$ knows that $s \in E_{p(s), \sigma_i(s)}$ and, therefore, evaluates commodity bundles $x_i \in \reals^2$ according to the updated utility function 
+    \begin{equation*}
+        \sum_s \left(\pi_{s'i} | p(s), \sigma_i(s)\right) u_{s'i}(x).
+    \end{equation*}
+\end{defn}
