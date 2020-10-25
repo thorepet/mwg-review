@@ -15,8 +15,6 @@ The document is not finished.
 *Part 2: Game Theory* will not be included (Rubinstein's notes are available as PDF).
 *Part 5: Welfare Economics and Incentives* will be covered if I have spare time.
 
-Part 4 is missing a chapter.
-
 ## If you are bored
 Pull requests, or issues are appreciated, should you find any typos etc.
 If you want to transcribe as well, fork the repo, and go ahead!
