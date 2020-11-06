@@ -1,7 +1,7 @@
 # Microeconomic Theory (MWG, 1995): Definitions etc.
 
 ## Idea
-This document compiles the definitions, propositions, and lemmas from everyone's favourite Micro textbook.
+This document compiles the definitions, propositions, corollaries, and lemmas from everyone's favourite Micro textbook.
 
 You cannot `Cmd+F` in the scanned PDF, but here you can.
 

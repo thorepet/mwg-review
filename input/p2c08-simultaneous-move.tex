@@ -1,2 +1,139 @@
 % Nothing in Introduction
 \addtocounter{section}{1}
+
+\section{Dominant and Dominated Strategies}
+
+\begin{defn}
+    A strategy $s_i \in S_i$ is a \emph{strictly dominant strategy} for player $i$ in game $\Gamma_N = [I, \{S_i\}, \{u_i(\cdot)\}]$ if for all $s_i' \neq s_i$, we have
+    \begin{equation*}
+        u_i (s_i, s_{-i}) > u_i (s'_i, s_{-i})
+    \end{equation*}
+    for all $s_{-i} \in S_{-i}$.
+\end{defn}
+
+\begin{defn}
+    A strategy $s_i \in S_i$ is a \emph{strictly dominated} for player $i$ in game $\Gamma_N = [I, \{S_i\}, \{u_i(\cdot)\}]$ if there exists another strategy $s_i' \in S_i$ such that for all $s_{-i} \in S_{-i}$,
+    \begin{equation*}
+        u_i (s'_i, s_{-i}) > u_i (s_i, s_{-i}).
+    \end{equation*}
+    In this case, we say that strategy $s_i'$ \emph{strictly dominates} strategy $s_i$.
+\end{defn}
+
+\begin{defn}
+    A strategy $s_i \in S_i$ is a \emph{weakly dominated} for player $i$ in game $\Gamma_N = [I, \{S_i\}, \{u_i(\cdot)\}]$ if there exists another strategy $s_i' \in S_i$ such that for all $s_{-i} \in S_{-i}$,
+    \begin{equation*}
+        u_i (s'_i, s_{-i}) \geq u_i (s_i, s_{-i}),
+    \end{equation*}
+    with strict inequality for some $s_{-i}$. In this case, we say that strategy $s_i'$ \emph{weakly dominates} strategy $s_i$. A strategy is a \emph{weakly dominant strategy} for player $i$ in game $\Gamma_N = [I, \{S_i\}, \{u_i(\cdot)\}]$ if it weakly dominates every other strategy in $S_i$.
+\end{defn}
+
+\begin{defn}
+    A strategy $\sigma_i \in \Delta(S_i)$ is \emph{strictly dominated} for player $i$ in game $\Gamma_N = [I, \{S_i\}, \{u_i(\cdot)\}]$ if there exists another strategy $\sigma_i' \in \Delta(S_i)$ such that for all $\sigma_{-i} \in \prod_{j \neq i} \Delta(S_j)$,
+    \begin{equation*}
+        u_i (\sigma_i', \sigma_{-i}) > u_i (\sigma_i, \sigma_{-i}).
+    \end{equation*}
+    In this case, we say that strategy $\sigma_i'$ \emph{strictly dominates} strategy $\sigma_i$. A strategy $\sigma_i$ is a \emph{strictly dominant strategy} for player $i$ in game $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$ if it strictly dominates every other strategy in $\Delta(S_i)$.
+\end{defn}
+
+\begin{prop}
+    Player $i$'s pure strategy $s_i \in S_i$ is strictly dominated in game $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$ if and only if there exists another strategy $\sigma_i' \in \Delta(S_i)$ such that 
+    \begin{equation*}
+        u_i (\sigma_i', s_{-i}) > u_i (s_i, s_{-i})
+    \end{equation*}
+    for all $s_{-i} \in S_{-i}$.
+\end{prop}
+
+
+\section{Rationalisable Strategies}
+
+\begin{defn}
+    In game $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$, a strategy $\sigma_i$ is a \emph{best response} for player $i$ to his rivals' strategies $\sigma_{-i}$ if
+    \begin{equation*}
+        u_i (\sigma_i, \sigma_{-i}) > u_i (\sigma_i', \sigma_{-i})
+    \end{equation*}
+    for all $\sigma_i' \in \Delta(S_i)$. Strategy $\sigma_i$ is \emph{never a best response} if there is no $\sigma_{-i}$ for which $\sigma_i$ is a best response.
+\end{defn}
+
+\begin{defn}
+    In game $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$, the strategies in $\Delta(S_i)$ that survive the iterated removal of strategies that are never a best response are known as player $i$'s \emph{rationalisable strategies}.
+\end{defn}
+
+
+\section{Nash Equilibrium}
+
+\begin{defn}
+    A strategy profile $s = (s_1, \dots, s_I)$ constitutes a \emph{Nash equilibrium} of game $\Gamma_N = [I, \{S_i\}, \{u_i(\cdot)\}]$ if for every $i = 1, \dots, I$,
+    \begin{equation*}
+        u_i (s_i, s_{-i}) \geq u_i (s_i', s_{-i})
+    \end{equation*}
+    for all $s_i' \in S_i$.
+\end{defn}
+
+\begin{defn}
+    A mixed strategy profile $\sigma = \sigma_1, \dots, \sigma_I$ constitutes a \emph{Nash equilibrium} of game $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$ if for every $i = 1, \dots, I$,
+    \begin{equation*}
+        u_i (\sigma_i, \sigma_{-i}) \geq u_i (\sigma_i', \sigma_{-i})
+    \end{equation*}
+    for all $\sigma_i' \in \Delta(S_i)$.
+\end{defn}
+
+\begin{prop}
+    Let $S_i^+ \subset S_i$ denote the set of pure strategies that player $i$ plays with positive probability in mixed strategy profile $\sigma = \sigma_1, \dots, \sigma_I$. Strategy profile $\sigma$ is a Nash equilibrium in game $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$ if and only if for all $i = 1, \dots, I$,
+    \begin{enumerate}
+        \item $u_i (s_i, \sigma_{-i}) = u_i (s_i', \sigma_{-i})$ for all $s_i, s_i' \in S_i^+$
+        \item $u_i (s_i, \sigma_{-i}) \geq u_i (s_i', \sigma_{-i})$ for all $s_i \in S_i^+$ and all $s_i' \not\in S_i^+$.
+    \end{enumerate}
+\end{prop}
+
+\begin{cor}
+    Pure strategy profile $s = (s_1, \dots, S_I)$ is a Nash equilibrium of game $\Gamma_N = [I, \{S_i\}, \{u_i(\cdot)\}]$ if and only if it is a (degenerate) mixed strategy Nash equilibrium game of $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$.
+\end{cor}
+
+\begin{prop}
+    Every game $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$ in which sets $S_1, \dots, S_I$ have a finite number of elements has a mixed strategy Nash equilibrium.
+\end{prop}
+
+\begin{prop}
+    A Nash equilibrium exists in game $\Gamma_N = [I, \{S_i\}, \{u_i(\cdot)\}]$ if for all $i = 1, \dots, I$,
+    \begin{enumerate}
+        \item $S_i$ is a nonempty, convex, and compact subset of some Euclidean space $\mathbb{R}^M$.
+        \item $u_i (s_1, \dots, s_I)$ is continuous in $(s_1, \dots, s_I)$ and quasiconcave in $s_i$.
+    \end{enumerate}
+\end{prop}
+
+
+\section{Games of Incomplete Information: Bayesian Nash Equilibrium}
+
+\begin{defn}
+    A (pure strategy) \emph{Bayesian Nash equilibrium} for the Bayesian game $[I, \{S_i\}, \{u_i(\cdot)\}, \Theta, F(\cdot)]$ is a profile of decision rules $(s_1(\cdot), \dots, s_I(\cdot))$ that constitutes a Nash equilibrium of game $\Gamma_N = [I, \{\mathscr{L}_i\}, \{\tilde{u}_i(\cdot)\}]$. That is, for every $i = 1, \dots, I$,
+    \begin{equation*}
+        \tilde{u}_i \left(s_i(\cdot), s_{-i}(\cdot)\right) \geq \tilde{u}_i \left(s'_i(\cdot), s_{-i}(\cdot)\right)
+    \end{equation*}
+    for all $s_i'(\cdot) \in \mathscr{L}_i$, where 
+    \begin{equation*}
+        \tilde{u}_i \left(s_1(\cdot), \dots, s_I(\cdot) \right) = E_\theta \left[ u_i \left(s_1(\theta_1), \dots, s_I(\theta_I), \theta_i \right) \right].
+    \end{equation*}
+\end{defn}
+
+\begin{prop}
+    A profile of decision rules $(s_1(\cdot), \dots, s_I(\cdot))$ is a Bayesian Nash equilibrium in Bayesian game $[I, \{S_i\}, \{u_i(\cdot)\}, \Theta, F(\cdot)]$ if and only if for all $i$ and all $\bar{\theta}_i \in \Theta_i$ occurring with positive probability
+    \begin{equation*}
+        E_{\theta_{-i}} \left[ u_i \left( s_i (\bar{\theta}_i), s_{-i}(\theta_{-i}), \bar{\theta}_i \right) | \bar{\theta}_i \right] \geq E_{\theta_{-i}} \left[ u_i \left( s_i' (\bar{\theta}_i), s_{-i}(\theta_{-i}), \bar{\theta}_i \right) | \bar{\theta}_i \right]
+    \end{equation*}
+    for all $s_i' \in S_i$, where the expectation is taken over realisations of the other players' random variables conditional on player $i$'s realisation of his signal $\bar{\theta}_i$.
+\end{prop}
+
+
+\section{The Possibility of Mistakes: Trembling-Hand Perfection}
+
+\begin{defn}
+    A Nash equilibrium $\sigma$ of a game $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$ is (\emph{normal form}) \emph{trembling-hand perfect} if there is \emph{some} sequence of perturbed games $\{\Gamma_{\varepsilon^k}\}_{k = 1}^\infty$ that converges to $\Gamma_N$ [in the sense that $\lim_{k \rightarrow \infty} \varepsilon_i^k (s_i) = 0$ for all $i$ and $s_i \in S_i$], for which there is \emph{some} associated sequence of Nash equilibria $\{\sigma^k\}_{k = 1}^\infty$ that converges to $\sigma$ (i.e., such that $\lim_{k \rightarrow \infty} \sigma^k = \sigma$).
+\end{defn}
+
+\begin{prop}
+    A Nash equilibrium $\sigma$ of a game $\Gamma_N = [I, \{\Delta(S_i)\}, \{u_i(\cdot)\}]$ is (normal form) trembling-hand perfect if and only if there is some sequence of totally mixed strategies $\{\sigma^k\}_{k = 1}^\infty$ such that $\lim_{k \rightarrow \infty} \sigma^k = \sigma$ and $\sigma_i$ is the best response to every element of sequence $\{\sigma_{-i}^k\}_{k = 1}^\infty$ for all $i = 1, \dots, I$.
+\end{prop}
+
+\begin{prop}
+    If $\sigma = (\sigma_1, \dots, \sigma_I)$ is a (normal form) trembling-hand perfect Nash equilibrium, then $\sigma_i$ is not a weakly dominated strategy for any $i = 1, \dots, I$. Hence, in any (normal form) trembling-hand perfect Nash equilibrium, no weakly dominated pure strategy can be played with positive probability.
+\end{prop}
