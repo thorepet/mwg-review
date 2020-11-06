@@ -12,7 +12,6 @@ These references are resolved, i.e. the equations are copied into the propositio
 
 ## Status
 The document is not finished.
-*Part 2: Game Theory* will not be included (Rubinstein's notes are available as PDF).
 *Part 5: Welfare Economics and Incentives* will be covered if I have spare time.
 
 ## If you are bored

@@ -1,2 +1,34 @@
 % Nothing in Introduction
 \addtocounter{section}{1}
+
+% Nothing in What is a Game?
+\addtocounter{section}{1}
+
+
+\section{The Extensive Form Representation of a Game}
+
+\begin{defn}
+    A game is one of \emph{perfect information} if each information set contains a single decision node. Otherwise, it is a game of \emph{imperfect information}.
+\end{defn}
+
+
+\section{Strategies and the Normal Form Representation of a Game}
+
+\begin{defn}
+    Let $\mathscr{H}_i$ denote the collection of player $i$'s information sets, $\mathscr{A}$ the set of possible actions in the game, and $C(H) \subset \mathscr{A}$ the set of actions possible at information set $H$. A \emph{strategy} for player $i$ is a function $s_i : \mathscr{H}_i \rightarrow \mathscr{A}$ such that $s_i(H) \in C(H)$ for all $H \in \mathscr{H}_i$.
+\end{defn}
+
+\begin{defn}
+    For a game with $I$ players, the \emph{normal form representation} $\Gamma_N$ specifies for each player $i$ a set of strategies $S_i$ (with $s_i \in S_i$) and a payoff function $u_i(s_1, \dots, s_I)$ giving the von Neumann-Morgenstern utility levels associated with the (possibly random) outcome arising from strategies $s_1, \dots, s_I$. Formally, we write $\Gamma_N = [I, \{S_i\}, \{u_i(\cdot)\}]$.
+\end{defn}
+
+
+\section{Randomized Choices}
+
+\begin{defn}
+    Given player $i$'s (finite) pure strategy set $S_i$, a \emph{mixed strategy} for player $i$, $\sigma_i : S_i \rightarrow [0, 1]$, assigns to each pure strategy $s_i \in S_i$ a probability $\sigma_i(s_i) \geq 0$ that it will be played, where $\sum_{s_i \in S_i} \sigma_i(s_i) = 1$.
+\end{defn}
+
+\begin{defn}
+    Given an extensive form game $\Gamma_E$, a \emph{behaviour strategy} for player $i$ specifies, for every information set $H \in \mathscr{H}_i$ and action $a \in C(H)$, a probability $\lambda_i(a, H) \geq 0$, with $\sum_{a \in C(H)} \lambda_i(a, H) = 1$ for all $H \in \mathscr{H}_i$.
+\end{defn}
