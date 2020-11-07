@@ -1,2 +1,90 @@
 % Nothing in Introduction
 \addtocounter{section}{1}
+
+
+\section{Sequential Rationality, Backward Induction, and Subgame Perfection}
+
+\begin{prop}[Zermelo's Theorem]
+    Every finite game of perfect information $\Gamma_E$ has a pure strategy Nash equilibrium that can be derived through backward induction. Moreover, if no player has the same payoffs at any two terminal nodes, then there is a unique Nash equilibrium that can be derived in this manner.
+\end{prop}
+
+\begin{defn}
+    A \emph{subgame} of an extensive form game $\Gamma_E$ is a subset of the game having the following properties:
+    \begin{enumerate}
+        \item It begins with an information set containing a single decision node, contains all the decision nodes that are successors (both immediate and later) of this node, and contains \emph{only} these nodes.
+        \item If decision node $x$ is in the subgame, then every $x' \in H(x)$ is also, where $H(x)$ is the information set that contains decision node $x$. (That is, there are no ``broken'' information sets.)
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}
+    A profile of strategies $\sigma = (\sigma_1, \dots, \sigma_I)$ in an $I$-player extensive form game $\Gamma_E$ is a \emph{subgame perfect Nash equilibrium} (SPNE) if it induces a Nash equilibrium in every subgame of $\Gamma_E$.
+\end{defn}
+
+\begin{prop}
+    Every finite game of perfect information $\Gamma_E$ has a pure strategy subgame perfect Nash equilibrium. Moreover, if no player has the same payoffs at any two terminal nodes, then there is a unique subgame perfect Nash equilibrium.
+\end{prop}
+
+\begin{prop}
+    Consider an extensive form game $\Gamma_E$ and some subgame $S$ of $\Gamma_E$. Suppose that strategy profile $\sigma^S$ is an SPNE in subgame $S$, and let $\hat{\Gamma}_E$ be the reduced game formed by replacing subgame $S$ by a terminal node with payoffs equal to those arising from play of $\sigma^S$. Then:
+    \begin{enumerate}
+        \item In any SPNE $\sigma$ of $\Gamma_E$ in which $\sigma^S$ is the play in subgame $S$, players' moves at information sets outside subgame $S$ must constitute an SPNE of reduced game $\hat{\Gamma}_E$.
+        \item If $\hat{\sigma}$ is an SPNE of $\hat{\Gamma}_E$, then the strategy profile $\sigma$ that specifies the moves in $\sigma^S$ at information sets in subgame $S$ and that specifies the moves in $\hat{\sigma}$ at information sets not in $S$ is an SPNE of $\Gamma_E$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    Consider an $I$-player extensive form game $\Gamma_E$ involving successive play of $T$ simultaneous-move games, $\Gamma_N^t = [I, \{\Delta(S_i^t)\}, \{u_i^t(\cdot)\}]$ for $t = 1, \dots, T$, with the players observing the pure strategies played in each game immediately after its play is concluded. Assume that each player's payoff is equal to the sum of her payoffs in the plays of the $T$ games. If there is a unique Nash equilibrium in each game $\Gamma_N^t$, say $\sigma^t = (\sigma_1^t, \dots, \sigma_I^t)$, then there is a unique SPNE of $\Gamma_E$ and it consists of each player $i$ playing strategy $\sigma_i^t$ in each game $\Gamma_N^t$ regardless of what has happened previously.
+\end{prop}
+
+
+\section{Beliefs and Sequential Rationality}
+
+\begin{defn}
+    A \emph{system of beliefs} $\mu$ in extensive form game $\Gamma_E$ is a specification of a probability $\mu(x) \in [0, 1]$ for each decision node $x$ in $\Gamma_E$ such that 
+    \begin{equation*}
+        \sum_{x \in H} \mu (x) = 1
+    \end{equation*}
+    for all information sets $H$.
+\end{defn}
+
+\begin{defn}
+    A strategy profile $\sigma = (\sigma_1, \dots, \sigma_I)$ in extensive form game $\Gamma_E$ is \emph{sequentially rational at information set $H$ given a system of beliefs} $\mu$ if, denoting by $\iota(H)$ the player who moves at information set $H$, we have
+    \begin{equation*}
+        E[u_{\iota(H)} | H, \mu, \sigma_{\iota(H)}, \sigma_{-\iota(H)}] \geq E[u_{\iota(H)} | H, \mu, \tilde{\sigma}_{\iota(H)}, \sigma_{-\iota(H)}]
+    \end{equation*}
+    for all $\tilde{\sigma}_{\iota(H)} \in \Delta(S_{\iota(H)})$. If strategy profile $\sigma$ satisfies this condition for \emph{all} information sets $H$, then we say that $\sigma$ is \emph{sequentially rational given belief system} $\mu$.
+\end{defn}
+
+\begin{defn}
+    A profile of strategies and system of beliefs $(\sigma, \mu)$ is a \emph{weak perfect Bayesian equilibrium} (weak PBE) in extensive form game $\Gamma_E$ if it has the following properties:
+    \begin{enumerate}
+        \item 
+        The strategy profile $\sigma$ is sequentially rational given belief system $\mu$.
+        
+        \item 
+        The system of beliefs $\mu$ is derived from strategy profile $\sigma$ through Bayes' rule whenever possible. That is, for any information set $H$ such that $\text{Prob}(H | \sigma) > 0$ (read as ``the probability of reaching information set $H$ is positive under strategies $\sigma$''), we must have
+        \begin{equation*}
+            \mu (x) = \frac{\text{Prob}(x | \sigma)}{\text{Prob}(H | \sigma)} \quad \text{for all } x \in H.
+        \end{equation*}
+    \end{enumerate}
+\end{defn}
+
+\begin{prop}
+    A strategy profile $\sigma$ is a Nash equilibrium of extensive form game $\Gamma_E$ if and only if there exists a system of beliefs $\mu$ such that
+    \begin{enumerate}
+        \item The strategy profile $\sigma$ is sequentially rational given belief system $\mu$ \emph{at all information sets $H$ such that} $\text{\emph{Prob}}(H | \sigma) > 0$.
+        \item The system of beliefs $\mu$ is derived from strategy profile $\sigma$ through Bayes' rule whenever possible.
+    \end{enumerate}
+\end{prop}
+
+\begin{defn}
+    A strategy profile and system of beliefs $(\sigma, \mu)$ is a \emph{sequential equilibrium} of extensive form game $\Gamma_E$ if it has the following properties:
+    \begin{enumerate}
+        \item Strategy profile $\sigma$ is sequentially rational given belief system $\mu$.
+        \item There exists a sequence of completely mixed strategies $\{\sigma^k\}_{k = 1}^\infty$, with $\lim_{k \rightarrow \infty} \sigma^k = \sigma$, such that $\mu = \lim_{k \rightarrow \infty} \mu^k$, where $\mu^k$ denotes the beliefs derived from strategy profile $\sigma^k$ using Bayes' rule.
+    \end{enumerate}
+\end{defn}
+
+\begin{prop}
+    In every sequential equilibrium $(\sigma, \mu)$ of an extensive form game $\Gamma_E$, the equilibrium strategy profile $\sigma$ constitutes a subgame perfect Nash equilibrium of $\Gamma_E$.
+\end{prop}
