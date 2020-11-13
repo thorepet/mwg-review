@@ -1,2 +1,140 @@
 % Nothing in Introduction
 \addtocounter{section}{1}
+
+\section{Utility Possibility Sets}
+
+\begin{defn}
+    The \emph{utility possibility set} (UPS) is the set
+    \begin{equation*}
+        U = \{(u_1, \dots, u_I) \in \mathbb{R}^I : u_1 \leq u_I(x), \dots, u_I \leq u_I(x) \text{ for some } x \in X\} \subset \mathbb{R}^L.
+    \end{equation*}
+    The \emph{Pareto frontier} of $U$ is formed by the utility vectors $u = (u_1, \dots, u_I) \in U$ for which there is no other $u' = (u_1', \dots, u_I') \in U$ with $u_i' \geq u_i$ for every $i$ and $u_i' > u_i$ for some $i$.
+\end{defn}
+
+
+% Nothing in Social Welfare Functions and Social Optima
+\addtocounter{section}{1}
+
+
+\section{Invariance Properties of Social Welfare Functions}
+
+\begin{defn}
+    Given a set $X$ of alternatives, a \emph{social welfare functional} $F : \mathscr{U}^I \to \mathscr{R}$ is a rule that assigns a rational preference relation $F (\tilde{u}_1, \dots, \tilde{u}_I)$ among the alternatives in the domain $X$ to every possible profile of individual utility functions $(\tilde{u}_1(\cdot), \dots, \tilde{u}_I(\cdot))$ defined on $X$. The strict preference relation derived from $F (\tilde{u}_1, \dots, \tilde{u}_I)$ is denoted $F_p (\tilde{u}_1, \dots, \tilde{u}_I)$.
+\end{defn}
+
+\begin{defn}
+    The social welfare functional $F : \mathscr{U}^I \to \mathscr{R}$ satisfies the (weak) \emph{Pareto property}, or is \emph{Paretian}, if, for any profile $(\tilde{u}_1, \dots, \tilde{u}_I) \in \mathscr{U}^I$ and any pair $x, y \in X$, we have that $\tilde{u}_i(x) \geq \tilde{u}_i(y)$ for all $i$ implies $x F (\tilde{u}_1, \dots, \tilde{u}_I) y$, and also that $\tilde{u}_i(x) > \tilde{u}_i(y)$ for all $i$ implies $x F_p (\tilde{u}_1, \dots, \tilde{u}_I) y$.
+\end{defn}
+
+\begin{defn}
+    The social welfare functional $F : \mathscr{U}^I \to \mathscr{R}$ satisfies the \emph{pairwise independence condition} if, whenever $x, y \in X$ are two alternatives and $(\tilde{u}_1, \dots, \tilde{u}_I) \in \mathscr{U}^I, (\tilde{u}_1', \dots, \tilde{u}_I') \in \mathscr{U}^I$ are two utility function profiles with $\tilde{u}_i (x) = \tilde{u}_i' (x)$ and $\tilde{u}_i (y) = \tilde{u}_i' (y)$ for all $i$, we have
+    \begin{equation*}
+        x F (\tilde{u}_1, \dots, \tilde{u}_I) y \iff x F (\tilde{u}_1', \dots, \tilde{u}_I') y.
+    \end{equation*}
+\end{defn}
+
+\begin{prop}
+    Suppose that there are at least three alternatives in $X$ and that the Paretian social welfare functional $F: \mathscr{U}^I \to \mathscr{R}$ satisfies the pairwise independence condition. Then there is a rational preference relation $\succsim$ defined on $\mathbb{R}^I$ [that is, on profiles $(u_1, \dots, u_I) \in \mathbb{R}^I$ of individual utility values] that generates $F(\cdot)$. In other words, for every profile of utility functions $(\tilde{u}_1, \dots, \tilde{u}_I) \in \mathscr{U}^I$ and for every pair of alternatives $x, y \in X$ we have
+    \begin{equation*}
+        x F (\tilde{u}_1, \dots, \tilde{u}_I) y \iff (\tilde{u}_1 (x), \dots, \tilde{u}_I (x)) \succsim (\tilde{u}_1 (y), \dots, \tilde{u}_I (y)).
+    \end{equation*}
+\end{prop}
+
+\begin{defn}
+    We say that the social welfare functional $F : \mathscr{U}^I \to \mathscr{R}$ is \emph{invariant to common cardinal transformations} if $F (\tilde{u}_1, \dots, \tilde{u}_I) = F (\tilde{u}_1', \dots, \tilde{u}_I')$ whenever the profiles of utility functions $(\tilde{u}_1, \dots, \tilde{u}_I)$ and $(\tilde{u}_1', \dots, \tilde{u}_I')$ differ only by a common change of origin and units, that is, whenever there are numbers $\beta > 0$ and $\alpha$ such that $\tilde{u}_i (x) = \beta \tilde{u}_i' (x) + \alpha$ for all $i$ and $x \in X$. If the invariance is only with respect to common changes of origin (i.e., we require $\beta = 1$) or of units (i.e. we require $\alpha = 0$), then we say that $F(\cdot)$ is \emph{invariant to common changes of origin} or \emph{of units}, respectively.
+\end{defn}
+
+\begin{prop}
+    Suppose that the social welfare functional $F : \mathscr{U}^I \to \mathscr{R}$ is generated from a continuous and increasing social welfare function. Suppose also that $F(\cdot)$ is invariant to common changes of origin. Then the social welfare functional can be generated from a social welfare function of the form 
+    \begin{equation*}
+        W(u_1, \dots, u_I) = \bar{u} - g(u_1 - \bar{u}, \dots, u_I - \bar{u}),
+    \end{equation*}
+    where $\bar{u} = (1/I) \sum_i u_i$.
+
+    Moreover, if $F(\cdot)$ is also independent of common changes of units, that is, fully invariant to common cardinal transformations, then $g(\cdot)$ is homogeneous of degree one on its domain: $\{s \in \mathbb{R}^I : \sum_i s_i = 0\}$.
+\end{prop}
+
+\begin{defn}
+    The social welfare functional $F : \mathscr{U}^I \to \mathscr{R}$ \emph{does not allow interpersonal comparison of utility} if $F (\tilde{u}_1, \dots, \tilde{u}_I) = F (\tilde{u}_1', \dots, \tilde{u}_I')$ whenever there are numbers $\beta_i$ and $\alpha_i$ such that $\tilde{u}_i (x) = \beta_i \tilde{u}_i' (x) + \alpha_i$ for all $i$ and $x$. If the invariance is only with respect to independent changes of origin (i.e., we require $\beta_i = 1$ for all $i$), or only with respect to independent changes of units (i.e., we require that $\alpha_i = 0$ for all $i$), then we say that $F(\cdot)$ is \emph{invariant to changes of origins} or \emph{of units}, respectively.
+\end{defn}
+
+\begin{prop}
+    Suppose that the social welfare functional $F : \mathscr{U}^I \to \mathscr{R}$ can be generated from an increasing, continuous social welfare function. If $F(\cdot)$ is invariant to independent changes of origins, then $F(\cdot)$ can be generated from a social welfare function $W(\cdot)$ of the purely utilitarian (but possibly nonsymmetric) form. That is, there are constants $b_i \geq 0$, not all zero, such that
+    \begin{equation*}
+        W(u_1, \dots, u_I) = \sum_i b_i u_i \quad \text{for all } i.
+    \end{equation*}
+    Moreover, if $F(\cdot)$ is also invariant to independent changes of units [i.e., if $F(\cdot)$ does not allow for interpersonal comparisons of utility], then $F$ is dictatorial: There is an agent $h$ such that, for every pair $x, y \in X$, $\tilde{u}_h(x) > \tilde{u}_h (y)$ implies $x F_p (\tilde{u}_1, \dots, \tilde{u}_I) y$.
+\end{prop}
+
+
+\section{The Axiomatic Bargaining Approach}
+
+\begin{defn}
+    A \emph{bargaining solution} is a rule that assigns a solution vector $f(U, u^*) \in U$ to every bargaining problem $(U, u^*)$.
+\end{defn}
+
+\begin{defn}
+    The bargaining solution $f(\cdot)$ is \emph{independent of utility origins} (IUO), or \emph{invariant to independent changes of origins}, if for any $\alpha = (\alpha_1, \dots, \alpha_I) \in \mathbb{R}^I$ we have
+    \begin{equation*}
+        f_i(U', u^* + \alpha) = f_i(U, u^*) + \alpha_i \quad \text{for every } i
+    \end{equation*}
+    whenever $U' = \{(u_1 + \alpha_1, \dots, u_I + \alpha_I) : u \in U\}$.
+\end{defn}
+
+\begin{defn}
+    The bargaining solution $f(\cdot)$ is \emph{independent of utility units} (IUU), of \emph{invariant to independence changes of units}, if for any $\beta = (\beta_1, \dots, \beta_I) \in \mathbb{R}^I$ with $\beta_i > 0$ for all $i$, we have
+    \begin{equation*}
+        f_i (U') = \beta_i f_i (U) \quad \text{for every } i
+    \end{equation*}
+    whenever $U' = \{(\beta_1 u_1, \dots, \beta_I u_i) : u \in U\}$.
+\end{defn}
+
+\begin{defn}
+    The bargaining solution $f(\cdot)$ satisfies the \emph{Pareto} property (P), or is \emph{Paretian}, if, for every $U$, $f(U)$ is a (weak) Pareto optimum, that is, there is no $u \in U$ such that $u_i > f_i(U)$ for every $i$.
+\end{defn}
+
+\begin{defn}
+    The bargaining solution $f(\cdot)$ satisfies the property of \emph{symmetry} (S) if whenever $U \subset \mathbb{R}^I$ is a symmetric set (i.e. U remains unaltered under permutations of the axes), we have that all entries of $f(U)$ are equal.
+\end{defn}
+
+\begin{defn}
+    The bargaining solution $f(\cdot)$ satisfies the property of \emph{individual rationality} (IR) if $f(U) \geq 0$.
+\end{defn}
+
+\begin{defn}
+    The bargaining solution satisfies the property of \emph{independence of irrelevant alternatives} (IIA) if, whenever $U' \subset U$ and $f(U) \in U'$, it follows that $f(U') = f(U)$.
+\end{defn}
+
+\begin{prop}
+    The Nash solution is the only bargaining solution that is independent of utility origins and units, Paretian, symmetric, and independent of irrelevant alternatives.
+\end{prop}
+
+
+\section{Coalition Bargaining: The Shapley Value}
+
+\begin{defn}
+    Given the set of agents $I$, a \emph{cooperative solution} $f(\cdot)$ is a rule that assigns to every game $v(\cdot)$ in characteristic form a utility allocation $f(v) \in \mathbb{R}^I$ that is feasible for the entire group, that is, such that $\sum_i f_i(v) \leq v(I)$.
+\end{defn}
+
+\begin{defn}
+    The cooperative solution $f(\cdot)$ is \emph{independent of utility origins and common changes of utility units} if, whenever we have two characteristic forms $v(\cdot)$ and $v'(\cdot)$ such that $v(S) = \beta v'(S) + \sum_{i \in S} \alpha_i$ for every $S \subset I$ and some numbers $\alpha_1, \dots, \alpha_I$, and $\beta > 0$, it follows that $f(v) = \beta f(v') + (\alpha_1, \dots, \alpha_I)$.
+\end{defn}
+
+\begin{defn}
+    The cooperative solution $f(\cdot)$ is \emph{Paretian} if $\sum_i f_i(v) = v(I)$, for every characteristic form $v(\cdot)$.
+\end{defn}
+
+\begin{defn}
+    The cooperative solution $f(\cdot)$ is \emph{symmetric} if the following property holds: Suppose that two characteristic forms, $v(\cdot)$ and $v'(\cdot)$ differ only by a permutation $\pi : I \to I$ of the names of the agents; that is, $v'(S) = v(\pi(S))$ for all $S \subset I$. Then the solution also differs only by this permutation; that is, $f_i(v') = f_{\pi(i)}(v)$ for all $i$.
+\end{defn}
+
+\begin{defn}
+    The cooperative solution $f(\cdot)$ satisfies the \emph{dummy axiom} if, for all games $v(\cdot)$ and all agents $i$ such that $v(S \cup {i}) = v(S)$ for all $S \subset I$, we have $f_i(v) = v(i) (=0)$. In words: If agent $i$ is a \emph{dummy} (i.e. does not contribute anything to any coalition), then agent $i$ does not receive any share of the surplus.
+\end{defn}
+
+\begin{defn}
+    The Shapley value solution $f_s(\cdot)$ is defined by
+    \begin{equation*}
+        f_{si} (v) = \frac{1}{I!} \sum_\pi g_{v, \pi} (i) \quad \text{for every } i.
+    \end{equation*}
+\end{defn}
