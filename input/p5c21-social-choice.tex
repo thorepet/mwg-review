@@ -1,2 +1,164 @@
 % Nothing in Introduction
 \addtocounter{section}{1}
+
+
+\section{A Special Case: Social Preferences over Two Alternatives}
+
+\begin{defn}
+    A \emph{social welfare functional} (or \emph{social welfare aggregator}) is a rule $F(\alpha_1, \dots, \alpha_I)$ that assigns a social preference, that is, $F(\alpha_1, \dots, \alpha_I) \in \{-1, 0, 1\}$, to every possible profile of individual preferences $(\alpha_1, \dots, \alpha_I) \in \{-1, 0, 1\}^I$.
+\end{defn}
+
+\begin{defn}
+    The social welfare functional $F(\alpha_1, \dots, \alpha_I)$ is \emph{Paretian}, or has the \emph{Pareto property}, if it respects unanimity of strict preferences on the part of the agents, that is, $F(1, \dots, 1) = 1$ and $F(-1, \dots, -1) = -1$.
+\end{defn}
+
+\begin{defn}
+    The social welfare functional $F(\alpha_1, \dots, \alpha_I)$ is \emph{symmetric among agents} (or \emph{anonymous}) if the names of the agents do not matter, that is, if a permutation of preferences across agents does not alter the social preference. Precisely, let $\pi : \{1, \dots, I\} \to \{1, \dots, I\}$ be an onto function (i.e., a function with the property that for any $i$ there is $h$ such that $\pi (h) = i$). Then for any profile $(\alpha_1, \dots, \alpha_I)$ we have $F(\alpha_1, \dots, \alpha_I) = F(\alpha_{\pi(1)}, \dots, \alpha_{\pi(I)})$.
+\end{defn}
+
+\begin{defn}
+    The social welfare functional $F(\alpha_1, \dots, \alpha_I)$ is \emph{neutral between alternatives} if $F(\alpha_1, \dots, \alpha_I) = - F(-\alpha_1, \dots, -\alpha_I)$ for every profile $(\alpha_1, \dots, \alpha_I)$, that is, if the social preference is reversed when we reverse the preferences of all agents.
+\end{defn}
+
+\begin{defn}
+    The social welfare functional $F(\alpha_1, \dots, \alpha_I)$ is \emph{positively responsive} if, whenever $(\alpha_1, \dots, \alpha_I) \geq (\alpha_1', \dots, \alpha_I'), (\alpha_1, \dots, \alpha_I) \neq (\alpha_1', \dots, \alpha_I')$, and $F(\alpha_1', \dots, \alpha_I') \geq 0$ we have $F(\alpha_1, \dots, \alpha_I) = +1$. That is, if $x$ is socially preferred or indifferent to $y$ and some agents raise their consideration of $x$, then $x$ becomes socially preferred.
+\end{defn}
+
+\begin{prop}[May's Theorem]
+    A social welfare functional $F(\alpha_1, \dots, \alpha_I)$ is a majority voting social welfare functional if and only if it is symmetric among agents, neutral between alternatives, and positive responsive.
+\end{prop}
+
+
+\section{The General Case: Arrow's Impossibility Theorem}
+
+\begin{defn}
+    A \emph{social welfare functional} (or \emph{social welfare aggregator}) defined on a given subset $\mathscr{A} \subset \mathscr{R}^I$ is a rule $F: \mathscr{A} \to \mathscr{R}$ that assigns a rational preference relation $F(\succsim_1, \dots, \succsim_I) \in \mathscr{R}$, interpreted as the social preference relation, to any profile of individual rational preference relations $(\succsim_1, \dots, \succsim_I)$ in the admissible domain $\mathscr{A} \subset \mathscr{R}^I$.
+\end{defn}
+
+\begin{defn}
+    The \emph{social welfare functional} $F: \mathscr{A} \to \mathscr{R}$ is \emph{Paretian} if, for any pair of alternatives $\{x, y\} \subset X$ and any preference profile $(\succsim_1, \dots, \succsim_I) \in \mathscr{A}$, we have that $x$ is socially preferred to $y$, that is, $x F_p (\succsim_1, \dots, \succsim_I) y$, whenever $x \succ_i y$ for every $i$.
+\end{defn}
+
+\begin{defn}
+    The \emph{social welfare functional} $F: \mathscr{A} \to \mathscr{R}$ defined on the domain $\mathscr{A}$ satisfies the \emph{pairwise independence condition} (or the \emph{independence of irrelevant alternatives condition}) if the social preference between any two alternatives $\{x, y\} \subset X$ depends only on the profile of individual preferences over the same alternatives. Formally, for any pair of alternatives $\{x, y\} \subset X$, and for any pair of preference profiles $(\succsim_1, \dots, \succsim_I) \in \mathscr{A}$ and $(\succsim_1', \dots, \succsim_I') \in \mathscr{A}$ with the property that, for every $i$, 
+    \begin{equation*}
+        x \succsim_i y \iff x \succsim_i' y \quad \text{and} \quad y \succsim_i x \iff y \succsim_i' x,
+    \end{equation*}
+    we have that
+    \begin{equation*}
+        x F (\succsim_1, \dots, \succsim_I) y \iff x F (\succsim_1', \dots, \succsim_I') y
+    \end{equation*}
+    and
+    \begin{equation*}
+        y F (\succsim_1, \dots, \succsim_I) x \iff y F (\succsim_1', \dots, \succsim_I') x.
+    \end{equation*}
+\end{defn}
+
+\begin{prop}[Arrow's Impossibility Theorem]
+    Suppose that the number of alternatives is at least three and that the domain of admissible individual profiles, denoted $\mathscr{A}$, is either $\mathscr{A} = \mathscr{R}^I$ of $\mathscr{A} = \mathscr{P}^I$. Then every social welfare function $F : \mathscr{A} \to \mathscr{R}$ that is Paretian and satisfies the pairwise independence condition is \emph{dictatorial} in the following sense: There is an agent $h$ such that, for any $\{x, y\} \subset X$ and any profile $(\succsim_1, \dots, \succsim_I) \in \mathscr{A}$, we have that $x$ is socially preferred to $y$, that is, $x F_p (\succsim_1, \dots, \succsim_I) y$, whenever $x \succ_h y$.
+\end{prop}
+
+\begin{defn}
+    Given $F(\cdot)$, we say that a subset of agents $S \subset I$ is:
+    \begin{enumerate}
+        \item \emph{Decisive for $x$ over $y$} if whenever every agent in $S$ prefers $x$ to $y$ \emph{and} every agent not in $S$ prefers $y$ to $x$, $x$ is socially preferred to $y$.
+        \item \emph{Decisive} if, for any pair $\{x, y\} \subset X$, $S$ is decisive for $x$ over $y$.
+        \item \emph{Completely decisive for $x$ over $y$} if whenever every agent in $S$ prefers $x$ to $y$, $x$ is socially preferred to $y$.
+    \end{enumerate}
+\end{defn}
+
+
+\section{Some Possibility Results: Restricted Domains}
+
+\begin{defn}
+    Suppose that the preference relation $\succsim$ on $X$ is reflexive and complete. We that then that:
+    \begin{enumerate}
+        \item $\succsim$ is \emph{quasitransitive} if the strict preference $\succ$ induced by $\succsim$ (i.e. $x \succ y \iff x \succsim y$ bot not $y \succsim x$) is transitive.
+        \item $\succsim$ is \emph{acyclic} if $\succsim$ has a maximal element in every finite subset $X' \subset X$, that is, $\{x \in X' : x \succsim y \text{ for all } y \in X'\} \neq \emptyset$.
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}
+    A binary relation $\geq$ on the set of alternatives $X$ is a \emph{linear order} on $X$ if it is \emph{reflexive} (i.e., $x \geq x$ for every $x \in X$), transitive (i.e., $x \geq y$ and $y \geq z$ implies $x \geq z$) and \emph{total} (i.e., for any distinct $x, y \in X$, we have that either $x \geq y$ or $y \geq x$, but not both).
+\end{defn}
+
+\begin{defn}
+    The rational preference relation $\succsim$ is \emph{single peaked} with respect to the linear order $\geq$ on $X$ if there is an alternative $x \in X$ with the property that $\succsim$ is increasing with respect to $\geq$ on $\{y \in X : x \geq y\}$ and decreasing with respect to $\geq$ on $\{y \in X : y \geq x\}$. That is,
+    \begin{equation*}
+        \text{If } x \geq z > y \quad \text{then} \quad z \succ y
+    \end{equation*}
+    and
+    \begin{equation*}
+        \text{If } y > z \geq x \quad \text{then} \quad z \succ y.
+    \end{equation*}
+\end{defn}
+
+\begin{defn}
+    Given a linear order $\geq$ on $X$, we denote $\mathscr{R}_\geq \subset \mathscr{R}$ the collection of all rational preference relations that are single peaked with respect to $\geq$.
+\end{defn}
+
+\begin{defn}
+    Agent $h \in I$ is a \emph{median agent for the profile} $(\succsim_1, \dots, \succsim_I) \in \mathscr{R}_\geq^I$ if 
+    \begin{equation*}
+        \# \{i \in I : x_i \geq x_h\} \geq \frac{I}{2} \quad \text{and} \quad \# \{i \in I : x_h \geq x_i\} \geq \frac{I}{2}.
+    \end{equation*}
+\end{defn}
+
+\begin{prop}
+    Suppose that $\geq$ is a linear order on $X$ and consider a profile of preferences $(\succsim_1, \dots, \succsim_I)$ where, for every $i$, $\succsim_i$ is single peaked with respect to $\geq$. Let $h \in I$ be a median agent. Then $x_h \hat{F} (\succsim_1, \dots, \succsim_I) y$ for every $y \in X$. That is, the peak $x_h$ of the median agent cannot be defeated by majority voting by any other alternative. Any alternative having this property is called a \emph{Condorcet winner}. Therefore, a Condorcet winner exists whenever the preferences of all agents are single-peaked with respect to the same linear order.
+\end{prop}
+
+\begin{prop}
+    Suppose that $I$ is odd and that $\geq$ is a linear order on $X$. Then pairwise majority voting generates a well-defined social welfare functional $F : \mathscr{P}_\geq^I \to \mathscr{R}$. That is, on the domain of preferences that are single-peaked with respect to $\geq$ and, moreover, have the property that no two distinct alternatives are indifferent, we can conclude that the social relation $\hat{F} (\succsim_1, \dots, \succsim_I)$ generated by pairwise majority voting is complete and transitive.
+\end{prop}
+
+
+\section{Social Choice Functions}
+
+\begin{defn}
+    Given any subset $\mathscr{A} \subset \mathscr{R}^I$, a \emph{social choice function} $f : \mathscr{A} \to X$ defined on $\mathscr{A}$ assigns a chosen element $f (\succsim_1, \dots, \succsim_I) \in X$ to every profile of individual preferences in $\mathscr{A}$.
+\end{defn}
+
+\begin{defn}
+    The social choice function $f : \mathscr{A} \to X$ defined on $\mathscr{A} \subset \mathscr{R}^I$ is \emph{weakly Paretian} if for any profile $(\succsim_1, \dots, \succsim_I) \in \mathscr{A}$ the choice $f (\succsim_1, \dots, \succsim_I) \in X$ is a weak Pareto optimum. That is, if for some pair $\{x, y\} \in X$ we have that $x \succ_i y$ for every $i$, then $y \neq f (\succsim_1, \dots, \succsim_I)$.
+\end{defn}
+
+\begin{defn}
+    The alternative $x \in X$ \emph{maintains its position from} the profile $(\succsim_1, \dots, \succsim_I) \in \mathscr{R}^I$ to the profile $(\succsim_1', \dots, \succsim_I') \in \mathscr{R}^I$ if 
+    \begin{equation*}
+        x \succsim_i y \quad \text{implies} \quad x \succsim_i' y
+    \end{equation*}
+    for every $i$ and every $y \in X$.
+\end{defn}
+
+\begin{defn}
+    The social choice function $f : \mathscr{A} \to X$ defined on $\mathscr{A} \subset \mathscr{R}^I$ is \emph{monotonic} of for any two profiles $(\succsim_1, \dots, \succsim_I) \in \mathscr{A}$, $(\succsim_1', \dots, \succsim_I') \in \mathscr{A}$ with the property that the chosen alternatives $x = f (\succsim_1, \dots, \succsim_I)$ maintains its position from $(\succsim_1, \dots, \succsim_I)$ to $(\succsim_1', \dots, \succsim_I')$, we have that $f (\succsim_1', \dots, \succsim_I') = x$.
+\end{defn}
+
+\begin{defn}
+    An agent $h \in I$ is a \emph{dictator} for the social choice function $f : \mathscr{A} \to X$ if, for every profile $(\succsim_1, \dots, \succsim_I) \in \mathscr{A}$, $f (\succsim_1, \dots, \succsim_I)$ is a most preferred alternative for $\succsim_h$ in $X$; that is,
+    \begin{equation*}
+        f (\succsim_1, \dots, \succsim_I) = \{x \in X : x \succsim_h y \text{ for every } y \in X\}.
+    \end{equation*}
+    A social choice function that admits a dictator is called \emph{dictatorial}.
+\end{defn}
+
+\begin{prop}
+    Suppose that the number of alternatives is at least three and that the domain of admissible preference profiles is either $\mathscr{A} = \mathscr{R}^I$ of $\mathscr{A} = \mathscr{P}^I$. Then every weakly Paretian and monotonic social choice function $f : \mathscr{A} \to X$ is dictatorial.
+\end{prop}
+
+\begin{defn}
+    Given a finite subset $X' \subset X$ and a profile $(\succsim_1, \dots, \succsim_I) \in \mathscr{R}^I$, we say that the profile $(\succsim_1', \dots, \succsim_I')$ \emph{takes $X'$ to the top from} $(\succsim_1, \dots, \succsim_I)$ if, for every $i$,
+    \begin{alignat*}{2}
+        &x \succ_i y && \text{for } x \in X' \text{ and } y \not\in X', \\
+        &x \succsim_i y \iff x \succsim_i' y \quad && \text{for all } x, y \in X'.
+    \end{alignat*}
+\end{defn}
+
+\begin{prop}
+    Suppose that the number of alternatives is at least three and that $f : \mathscr{P}^I \to X$ is a social choice function that is weakly Paretian and satisfies the following \emph{no-incentive-to-misrepresent} condition:
+    \begin{equation*}
+        f (\succsim_1, \dots, \succsim_{h - 1}, \succsim_h, \succsim_{h + 1}, \dots \succsim_I) \succsim_h f (\succsim_1, \dots, \succsim_{h - 1}, \succsim_h', \succsim_{h + 1}, \dots \succsim_I)
+    \end{equation*}
+    for every agent $h$, every $\succsim_h \in \mathscr{P}$, and every profile $(\succsim_1, \dots, \succsim_I) \in \mathscr{P}^I$. Then $f(\cdot)$ is dictatorial.
+\end{prop}
