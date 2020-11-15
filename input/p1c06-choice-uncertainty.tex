@@ -31,15 +31,15 @@
 \end{defn}
 
 \begin{defn}
-    The utility function $U : \mathscr{L} \rightarrow \mathbb{R}$ has an \emph{expected utility form} if there is an assignment of numbers $(u_1, \dots, u_N)$ to the $N$ outcomes such that for every simple lottery $L = (p_1, \dots, p_N) \in \mathscr{L}$ we have
+    The utility function $U : \mathscr{L} \to \mathbb{R}$ has an \emph{expected utility form} if there is an assignment of numbers $(u_1, \dots, u_N)$ to the $N$ outcomes such that for every simple lottery $L = (p_1, \dots, p_N) \in \mathscr{L}$ we have
     \begin{equation*}
         U(L) = u_1 p_1 + \cdots + u_N p_N.
     \end{equation*}
-    A utility function $U : \mathscr{L} \rightarrow \mathbb{R}$ with the expected utility form is called a \emph{von Neumann-Morgenstern (v.N-M) expected utility function}.
+    A utility function $U : \mathscr{L} \to \mathbb{R}$ with the expected utility form is called a \emph{von Neumann-Morgenstern (v.N-M) expected utility function}.
 \end{defn}
 
 \begin{prop}
-    A utility function $U : \mathscr{L} \rightarrow \mathbb{R}$ has an expected utility form if and only if it is \emph{linear}, that is, if and only if it satisfies the property that
+    A utility function $U : \mathscr{L} \to \mathbb{R}$ has an expected utility form if and only if it is \emph{linear}, that is, if and only if it satisfies the property that
     \begin{equation*}
         U \left( \sum_{k = 1}^K \alpha_k L_k \right) = \sum_{k = 1}^K \alpha_k U(L_k)
     \end{equation*}
@@ -47,7 +47,7 @@
 \end{prop}
 
 \begin{prop}
-    Suppose that $U : \mathscr{L} \rightarrow \mathbb{R}$ is a v.N-M expected utility function for the preference relation $\succsim$ on $\mathscr{L}$. Then $\tilde{U} : \mathscr{L} \rightarrow \mathbb{R}$ is another v.N-M utility function for $\succsim$ if and only if there are scalars $\beta > 0$ and $\gamma$ such that $\tilde{U}(L) = \beta U(L) + \gamma$ for every $L \in \mathscr{L}$.
+    Suppose that $U : \mathscr{L} \to \mathbb{R}$ is a v.N-M expected utility function for the preference relation $\succsim$ on $\mathscr{L}$. Then $\tilde{U} : \mathscr{L} \to \mathbb{R}$ is another v.N-M utility function for $\succsim$ if and only if there are scalars $\beta > 0$ and $\gamma$ such that $\tilde{U}(L) = \beta U(L) + \gamma$ for every $L \in \mathscr{L}$.
 \end{prop}
 
 \begin{prop}[Expected Utility Theorem]
@@ -140,7 +140,7 @@
 \section{Comparison of Payoff Distributions in Terms of Return and Risk}
 
 \begin{defn}
-    The distribution $F(\cdot)$ \emph{first-order stochastically dominates} $G(\cdot)$ if, for every nondecreasing function $u : \reals \rightarrow \reals$, we have
+    The distribution $F(\cdot)$ \emph{first-order stochastically dominates} $G(\cdot)$ if, for every nondecreasing function $u : \reals \to \reals$, we have
     \begin{equation*}
         \int u(x) dF(x) \geq \int u(x) dG(x).
     \end{equation*}
@@ -151,7 +151,7 @@
 \end{prop}
 
 \begin{defn}\label{pi.chvi.2-stoch-dom}
-    For any two distributions $F(\cdot)$ and $G(\cdot)$ with the same mean, $F(\cdot)$ \emph{second-order stochastically dominates} (or \emph{is less risky than}) $G(\cdot)$ if for every nondecreasing concave function $u : \reals_+ \rightarrow \reals$, we have
+    For any two distributions $F(\cdot)$ and $G(\cdot)$ with the same mean, $F(\cdot)$ \emph{second-order stochastically dominates} (or \emph{is less risky than}) $G(\cdot)$ if for every nondecreasing concave function $u : \reals_+ \to \reals$, we have
     \begin{equation*}
         \int u(x) dF(x) \geq \int u(x) dG(x).
     \end{equation*}
@@ -170,11 +170,11 @@
 \section{State-Dependent Utility}
 
 \begin{defn}
-    A \emph{random variable} is a function $g : S \rightarrow \reals_+$ that maps states into monetary outcomes.
+    A \emph{random variable} is a function $g : S \to \reals_+$ that maps states into monetary outcomes.
 \end{defn}
 
 \begin{defn}
-    The preference relation $\succsim$ has an \emph{extended expected utility representation} if for every $s \in S$, there is a function $u_s : \reals_+ \rightarrow \reals$ such that for any $(x_1, \dots, x_S) \in \mathbb{R}^{S}_+$ and $(x'_1, \dots, x'_S) \in \mathbb{R}^{S}_+$,
+    The preference relation $\succsim$ has an \emph{extended expected utility representation} if for every $s \in S$, there is a function $u_s : \reals_+ \to \reals$ such that for any $(x_1, \dots, x_S) \in \mathbb{R}^{S}_+$ and $(x'_1, \dots, x'_S) \in \mathbb{R}^{S}_+$,
     \begin{equation*}
         (x_1, \dots, x_S) \succ (x'_1, \dots, x'_S) \quad \text{if and only if} \quad \sum_s \pi_s u_s(x_s) \geq \sum_s \pi_s u_s(x'_s).
     \end{equation*}

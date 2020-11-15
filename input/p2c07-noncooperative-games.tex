@@ -15,7 +15,7 @@
 \section{Strategies and the Normal Form Representation of a Game}
 
 \begin{defn}
-    Let $\mathscr{H}_i$ denote the collection of player $i$'s information sets, $\mathscr{A}$ the set of possible actions in the game, and $C(H) \subset \mathscr{A}$ the set of actions possible at information set $H$. A \emph{strategy} for player $i$ is a function $s_i : \mathscr{H}_i \rightarrow \mathscr{A}$ such that $s_i(H) \in C(H)$ for all $H \in \mathscr{H}_i$.
+    Let $\mathscr{H}_i$ denote the collection of player $i$'s information sets, $\mathscr{A}$ the set of possible actions in the game, and $C(H) \subset \mathscr{A}$ the set of actions possible at information set $H$. A \emph{strategy} for player $i$ is a function $s_i : \mathscr{H}_i \to \mathscr{A}$ such that $s_i(H) \in C(H)$ for all $H \in \mathscr{H}_i$.
 \end{defn}
 
 \begin{defn}
@@ -26,7 +26,7 @@
 \section{Randomized Choices}
 
 \begin{defn}
-    Given player $i$'s (finite) pure strategy set $S_i$, a \emph{mixed strategy} for player $i$, $\sigma_i : S_i \rightarrow [0, 1]$, assigns to each pure strategy $s_i \in S_i$ a probability $\sigma_i(s_i) \geq 0$ that it will be played, where $\sum_{s_i \in S_i} \sigma_i(s_i) = 1$.
+    Given player $i$'s (finite) pure strategy set $S_i$, a \emph{mixed strategy} for player $i$, $\sigma_i : S_i \to [0, 1]$, assigns to each pure strategy $s_i \in S_i$ a probability $\sigma_i(s_i) \geq 0$ that it will be played, where $\sum_{s_i \in S_i} \sigma_i(s_i) = 1$.
 \end{defn}
 
 \begin{defn}
