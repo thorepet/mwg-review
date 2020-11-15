@@ -11,7 +11,7 @@
     an allocation $(x^*, y^*)$ and a price vector $p = (p_1, \dots, p_L)$ constitute a \emph{Walrasian} (or \emph{competitive}, or \emph{market}, or \emph{price-taking}) equilibrium if
     \begin{enumerate}
         \item
-        For every $j$, $y^*_j \in Y_j$ maximises profits in $Y_j$; that is
+        For every $j$, $y^*_j \in Y_j$ maximizes profits in $Y_j$; that is
         \begin{equation*}
             p \cdot y_j \leq y \cdot y^*_j \quad \text{for all } y_j \in Y_j.
         \end{equation*}
@@ -64,7 +64,7 @@
 \section{Existence of Walrasian Equilibrium}
 
 \begin{prop}
-    Suppose that $z(p)$ is a function defined for all strictly positive price vectors $p \in \mathbb{R}^L_{++}$ and satisfying conditions (i) to (v) of Proposition \ref{piv.chxvii.excess-demand-properties}. Then the system of euqations $z(p) = 0$ has a solution. Hence, a Walrasian equilibrium exists in any pure exchange economy in which $\sum_i \omega_i \gg 0$ and every consumer has continuous, strictly convex, and strongly monotone preferences.
+    Suppose that $z(p)$ is a function defined for all strictly positive price vectors $p \in \mathbb{R}^L_{++}$ and satisfying conditions (i) to (v) of Proposition \ref{piv.chxvii.excess-demand-properties}. Then the system of equations $z(p) = 0$ has a solution. Hence, a Walrasian equilibrium exists in any pure exchange economy in which $\sum_i \omega_i \gg 0$ and every consumer has continuous, strictly convex, and strongly monotone preferences.
 \end{prop}
 
 \begin{prop}
@@ -75,15 +75,15 @@
 \section{Local Uniqueness and the Index Theorem}
 
 \begin{defn}
-    An equilibrium price vector $p = (p_1, \dots, p_{L - 1})$ is \emph{regular} if the $(L - 1) \times (L - 1)$ matrix of price effects $D \hat{z}(p)$ is nonsingular, that is, has rank $L - 1$. If every normalised equilibrium price vector is regular, we say that the \emph{economy is regular}.
+    An equilibrium price vector $p = (p_1, \dots, p_{L - 1})$ is \emph{regular} if the $(L - 1) \times (L - 1)$ matrix of price effects $D \hat{z}(p)$ is nonsingular, that is, has rank $L - 1$. If every normalized equilibrium price vector is regular, we say that the \emph{economy is regular}.
 \end{defn}
 
 \begin{prop}
-    Any regular (normalised) equilibrium price vector
+    Any regular (normalized) equilibrium price vector
     \begin{equation*}
         p = (p_1, \dots, p_{L - 1}, 1)
     \end{equation*}
-    is \emph{locally isolated} (or \emph{locally unique}). That is, there is an $\varepsilon > 0$ such that if $p' \neq p, p'_L = p_L = 1$, and $||p' - p|| < \varepsilon$, then $z(p') \neq 0$. Moreoever, of the economy is regular, then the number of normalised equilibrium price vectors is finite.
+    is \emph{locally isolated} (or \emph{locally unique}). That is, there is an $\varepsilon > 0$ such that if $p' \neq p, p'_L = p_L = 1$, and $||p' - p|| < \varepsilon$, then $z(p') \neq 0$. Moreover, of the economy is regular, then the number of normalized equilibrium price vectors is finite.
 \end{prop}
 
 \begin{defn}
@@ -137,7 +137,7 @@
 \end{prop}
 
 \begin{prop}
-    For any $N \geq 1$, suppose that we assign to each $n = 1, \dots, N$ a price vector $p^n$, normalised to $||p^n|| = 1$, and an $L \times L$ matrix $A_n$ of rank $L - 1$, satisfying $A_n p^n = 0$ and $p^n \cdot A_n = 0$. Suppose that, in addition, the index formula $\sum_n (-1)^{L - 1} \text{sign} | \hat{A}_n | = +1$ holds. If $L = 2$, assume also that positive and negative index equilibria alternate.
+    For any $N \geq 1$, suppose that we assign to each $n = 1, \dots, N$ a price vector $p^n$, normalized to $||p^n|| = 1$, and an $L \times L$ matrix $A_n$ of rank $L - 1$, satisfying $A_n p^n = 0$ and $p^n \cdot A_n = 0$. Suppose that, in addition, the index formula $\sum_n (-1)^{L - 1} \text{sign} | \hat{A}_n | = +1$ holds. If $L = 2$, assume also that positive and negative index equilibria alternate.
 
     Then there is an economy with $L$ consumers such that the aggregate excess demand $z(\cdot)$ has the properties:
     \begin{enumerate}
@@ -165,7 +165,7 @@
 \end{defn}
 
 \begin{prop}
-    Suppose that the excess demand function $z(\cdot)$ is such that, for any constant returns technology $Y$, the economy formed by $z(\cdot)$ and $Y$ has a unique (normalised) equilibrium price vector. Then $z(\cdot)$ satisfies the weak axiom. Conversely, if $z(\cdot)$ satisfies the weak axiom then, for any constant returns convex technology $Y$, the set of equilibrium price vectors is convex (and so, if the set of normalised price equilibria is finite, there can be at most one normalised price equilibrium).
+    Suppose that the excess demand function $z(\cdot)$ is such that, for any constant returns technology $Y$, the economy formed by $z(\cdot)$ and $Y$ has a unique (normalized) equilibrium price vector. Then $z(\cdot)$ satisfies the weak axiom. Conversely, if $z(\cdot)$ satisfies the weak axiom then, for any constant returns convex technology $Y$, the set of equilibrium price vectors is convex (and so, if the set of normalized price equilibria is finite, there can be at most one normalized price equilibrium).
 \end{prop}
 
 \begin{defn}
@@ -173,7 +173,7 @@
 \end{defn}
 
 \begin{prop}
-    An aggregate excess demand function $z(\cdot)$ that satisfies the gross substitute property has at most one exchange equilibrium; that is, $z(p) = 0$ has at most one (normalised) solution.
+    An aggregate excess demand function $z(\cdot)$ that satisfies the gross substitute property has at most one exchange equilibrium; that is, $z(p) = 0$ has at most one (normalized) solution.
 \end{prop}
 
 \begin{prop}
@@ -214,7 +214,7 @@
 \end{prop}
 
 \begin{defn}
-    We say that the differentiable trajectory $y(t) \in Y$ is \emph{admissible} if $p(y(t)) \cdot (dy(t)/dt) \geq 0$ for every $t$, with equality only if $y(t)$ is profit maximising for $p(y(t))$ (in which case we could say that we are at a long-run equilibrium).
+    We say that the differentiable trajectory $y(t) \in Y$ is \emph{admissible} if $p(y(t)) \cdot (dy(t)/dt) \geq 0$ for every $t$, with equality only if $y(t)$ is profit maximizing for $p(y(t))$ (in which case we could say that we are at a long-run equilibrium).
 \end{defn}
 
 \begin{prop}
