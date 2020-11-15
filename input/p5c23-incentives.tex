@@ -1,2 +1,180 @@
 % Nothing in Introduction
 \addtocounter{section}{1}
+
+
+\section{The Mechanism Design Problem}
+
+\begin{defn}
+    A \emph{social choice function} is a function $f : \Theta_1 \times \cdots \times \Theta_I \to X$ that, for each possible profile of agents' types $(\theta_1, \dots, \theta_I)$, assigns a collective choice $f(\theta_1, \dots, \theta_I) \in X$.
+\end{defn}
+
+\begin{defn}
+    The social choice function $f : \Theta_1 \times \cdots \times \Theta_I \to X$ is \emph{ex post efficient} (or \emph{Paretian}) if for no profile $\theta = (\theta_1, \dots, \theta_I)$ is there an $x \in X$ such that $u_i (x, \theta_i) \geq u_i (f(\theta), \theta_i)$ for every $i$, and $u_i (x, \theta_i) > u_i (f(\theta), \theta_i)$ for some $i$.
+\end{defn}
+
+\begin{defn}
+    A \emph{mechanism} $\Gamma = (S_1, \dots, S_I, g(\cdot))$ is a collection of $I$ strategy sets $(S_1, \dots, S_I)$ and an outcome function $g : S_1 \times \cdots \times S_I \to X$.
+\end{defn}
+
+\begin{defn}
+    The mechanism $\Gamma = (S_1, \dots, S_I, g(\cdot))$ \emph{implements} social choice function $f(\cdot)$ if there is an equilibrium strategy profile $(s_1^*(\cdot), \dots, s_I^*(\cdot))$ of the game induced by $\Gamma$ such that $g(s_1^*(\theta_1), \dots, s_I^*(\theta_I)) = f(\theta_1, \dots, \theta_I)$ for all $(\theta_1, \dots, \theta_I) \in \Theta_1 \times \cdots \times \Theta_I$.
+\end{defn}
+
+\begin{defn}
+    A \emph{direct revelation mechanism} is a mechanism in which $S_i = \Theta_i$ for all $i$ and $g(\theta) = f(\theta)$ for all $\theta \in \Theta_1 \times \cdots \times \Theta_I$.
+\end{defn}
+
+\begin{defn}
+    The social choice function $f(\cdot)$ is \emph{truthfully implementable} (or \emph{incentive compatible}) if the direct revelation mechanism $\Gamma = (\Theta_1, \dots, \Theta_I, f(\cdot))$ has an equilibrium $(s_1^*(\cdot), \dots, s_I^*(\cdot))$ in which $s_i^*(\theta_i) = \theta_i$ for all $\theta_i \in \Theta_i$ and all $i = 1, \dots, I$; that is, if truth telling by each agent $i$ constitutes an equilibrium of $\Gamma = (\Theta_1, \dots, \Theta_I, f(\cdot))$.
+\end{defn}
+
+
+\section{Dominant Strategy Implementation}
+
+\begin{defn}
+    The strategy profile $s^*(\cdot) = (s_1^*(\cdot), \dots, s_I^*(\cdot))$ is a \emph{dominant strategy equilibrium} of mechanism $\Gamma = (S_1, \dots, S_I, g(\cdot))$ if, for all $i$ and all $\theta_i \in \Theta_i$, 
+    \begin{equation*}
+        u_i\left(g\left( s_i^* (\theta_i), s_{-i}\right), \theta_i\right) \geq u_i\left(g\left(s_i', s_{-i}\right), \theta_i\right)
+    \end{equation*}
+    for all $s_i' \in S_i$ and all $s_{-i} \in S_{-i}$.
+\end{defn}
+
+\begin{defn}
+    The mechanism $\Gamma = (S_1, \dots, S_I, g(\cdot))$ \emph{implements the social choice function $f(\cdot)$ in dominant strategies} if there exists a dominant strategy equilibrium of $\Gamma$, $s^*(\cdot) = (s_1^*(\cdot), \dots, s_I^*(\cdot))$, such that $g(s^*(\theta)) = f(\theta)$ for all $\theta \in \Theta$.
+\end{defn}
+
+\begin{defn}
+    The social choice function $f(\cdot)$ is \emph{truthfully implementable in dominant strategies} (or \emph{dominant strategy compatible}, or \emph{strategy-proof}, or \emph{straightforward}) if $s_i^*(\theta_i) = \theta_i$ for every $\theta_i \in \Theta_i$ and $i = 1, \dots, I$ is a dominant strategy equilibrium of the direct revelation mechanism $\Gamma = (\Theta_1, \dots, \Theta_I, f(\cdot))$. That is, if for all $i$ and $\theta_i \in \Theta_i$,
+    \begin{equation*}
+        u_i(f(\theta_i, \theta_{-i}), \theta_i) \geq u_i(f(\hat{\theta}_i, \theta_{-i}), \theta_i)
+    \end{equation*}
+    for all $\hat{\theta}_i \in \Theta_i$ and all $\theta_{-i} \in \Theta_{-i}$.
+\end{defn}
+
+\begin{prop}[The Revelation Principle for Dominant Strategies]
+    Suppose that there exists a mechanism $\Gamma = (S_1, \dots, S_I, g(\cdot))$ that implements the social choice function $f(\cdot)$ in dominant strategies. Then $f(\cdot)$ is truthfully implementable in dominant strategies.
+\end{prop}
+
+\begin{prop}
+    The social choice function $f(\cdot)$ is truthfully implementable in dominant strategies if and only if for all $i$, all $\theta_{-i} \in \Theta_{-i}$, and all pairs of types for agent $i$, $\theta_i'$ and $\theta_i'' \in \Theta_i$, we have
+    \begin{equation*}
+        f(\theta_i'', \theta_{-i}) \in L_i(f(\theta_i', \theta_{-i}), \theta_i') \quad \text{and} \quad f(\theta_i', \theta_{-i}) \in L_i(f(\theta_i'', \theta_{-i}), \theta_i'').
+    \end{equation*}
+\end{prop}
+
+\begin{defn}
+    The social choice function $f(\cdot)$ is \emph{dictatorial} if there is an agent $i$ such that, for all $\theta = (\theta_1, \dots, \theta_I) \in \Theta$,
+    \begin{equation*}
+        f(\theta) \in   \{x \in X : u_i(x, \theta_i) \geq u_i(y, \theta_i) \text{ for all } y \in X\}.
+    \end{equation*}
+\end{defn}
+
+\begin{defn}
+    The social choice function $f(\cdot)$ is \emph{monotonic} if, for any $\theta$, if $\theta'$ is such that $L_i(f(\theta), \theta_i) \subset L_i(f(\theta), \theta_i')$ for all $i$ [i.e., if $L_i(f(\theta), \theta_i)$ is weakly included in $L_i(f(\theta), \theta_i')$ for all $i$], then $f(\theta') = f(\theta)$.
+\end{defn}
+
+\begin{prop}[The Gibbard Satterthwaite Theorem]
+    Suppose that $X$ is finite and contains at least three elements, that $\mathscr{R}_i = \mathscr{P}$ for all $i$, and that $f(\Theta) = X$. Then the social choice function $f(\cdot)$ is truthfully implementable in dominant strategies if and only if it is dictatorial.
+\end{prop}
+
+\begin{cor}
+    Suppose that $X$ is finite and contains at least three elements, that $\mathscr{P} \subset \mathscr{R}_i$ for all $i$, and that $f(\Theta) = X$. Then the social choice function $f(\cdot)$ is truthfully implementable in dominant strategies if and only if it is dictatorial.
+\end{cor}
+
+\begin{defn}
+    The social choice function $f(\cdot)$ is \emph{dictatorial on set} $\hat{X} \subset X$ if there exists an agent $i$ such that, for all $\theta = (\theta_1, \dots, \theta_I) \in \Theta$, $f(\theta) \in \{x \in \hat{X} : u_i(x, \theta_i) \geq u_i(y, \theta_i) \text{ for all } y \in \hat{X}\}$.
+\end{defn}
+
+\begin{cor}
+    Suppose that $X$ is finite, that the number of elements in $f(\Theta)$ is at least three, and that $\mathscr{P} \subset \mathscr{R}_i$ for all $i = 1, \dots, I$. Then $f(\cdot)$ is truthfully implementable in dominant strategies if and only if it is dictatorial on the set $f(\Theta)$.
+\end{cor}
+
+\addtocounter{equation}{6}
+
+\begin{prop}
+    Let $k^*(\cdot)$ be a function satisfying
+    \begin{equation}\label{pv.chxxiii.k}
+        \sum_{i = 1}^I v_i(k(\theta), \theta_i) \geq \sum_{i = 1}^I v_i(k, \theta_i) \quad \text{for all } k \in K.
+    \end{equation}
+    The social choice function $f(\cdot) = (k^*(\cdot), t_1(\cdot), \dots, t_I(\cdot))$ is truthfully implementable in dominant strategies if, for all $i = 1, \dots, I$,
+    \begin{equation}\label{pv.chxxiii.t}
+        t_i(\theta) = \left[ \sum_{j \neq i} v_j(k^*(\theta), \theta_j) \right] + h_i(\theta_{-i})
+    \end{equation}
+    where $h_i(\cdot)$ is an arbitrary function of $\theta_{-i}$.
+\end{prop}
+
+\begin{prop}
+    Suppose that for each agent $i = 1, \dots, I$, $\{v_i(\cdot, \theta_i) : \theta_i \in \Theta_i\} = \mathscr{V}$; that is, every possible valuation function from $K$ to $\mathbb{R}$ arises for some $\theta_i \in \Theta_i$. Then a social choice function $f(\cdot) = (k^*(\cdot), t_1(\cdot), \dots, t_I(\cdot))$ in which $k^*(\cdot)$ satisfies \ref{pv.chxxiii.k} is truthfully implementable in dominant strategies only if $t_i(\cdot)$ satisfies \ref{pv.chxxiii.t} for all $i = 1, \dots, I$.
+\end{prop}
+
+\begin{prop}
+    Suppose that for each agent $i = 1, \dots, I$, $\{v_i(\cdot, \theta_i) : \theta_i \in \Theta_i\} = \mathscr{V}$; that is, every possible valuation function from $K$ to $\mathbb{R}$ arises for some $\theta_i \in \Theta_i$. Then there is no social choice function $f(\cdot) = (k^*(\cdot), t_1(\cdot), \dots, t_I(\cdot))$ that is truthfully implementable in dominant strategies and is ex post efficient, that is, that satisfies \ref{pv.chxxiii.k} and
+    \begin{equation*}
+        \sum_i t_i(\theta) = 0 \quad \text{for all } \theta \in \Theta.
+    \end{equation*}
+\end{prop}
+
+
+\section{Bayesian Implementation}
+
+\begin{defn}
+    The strategy profile $s^*(\cdot) = (s_1^*(\cdot), \dots, s_I^*(\cdot))$ is a \emph{Bayesian Nash equilibrium} of mechanism $\Gamma = (S_1, \dots, S_I, g(\cdot))$ if, for all $i$ and all $\theta_i \in \Theta_i$,
+    \begin{equation*}
+        E_{\theta_{-i}} [u_i(g(s^*_i(\theta_i), s^*_{-i}(\theta_{-i})), \theta_i) | \theta_i] \geq E_{\theta_{-i}} [u_i(g(\hat{s}_i(\theta_i), s^*_{-i}(\theta_{-i})), \theta_i) | \theta_i]
+    \end{equation*}
+    for all $\hat{s}_i \in S_i$.
+\end{defn}
+
+\begin{defn}
+    The mechanism $\Gamma = (S_1, \dots, S_I, g(\cdot))$ \emph{implements the social choice function $f(\cdot)$ in Bayesian Nash equilibrium} if there is a Bayesian Nash equilibrium of $\Gamma$, $s^*(\cdot) = (s_1^*(\cdot), \dots, s_I^*(\cdot))$, such that $g(s^*(\theta)) = f(\theta)$ for all $\theta \in \Theta$.
+\end{defn}
+
+\begin{defn}
+    The social choice function $f(\cdot)$ is \emph{truthfully implementable in Bayesian Nash equilibrium} (or \emph{Bayesian incentive compatible}) if $s^*_i(\theta_i) = \theta_i$ for all $\theta_i \in \Theta_i$ and $i = 1, \dots, I$ is a Bayesian Nash equilibrium of the direct revelation mechanism $\Gamma = (\Theta_1, \dots, \Theta_I, f(\cdot))$. That is, if for all $i = 1, \dots, I$ and all $\theta_i \in \Theta_i$,
+    \begin{equation*}
+        E_{\theta_{-i}} [u_i(f(\theta_i, \theta_{-i}), \theta_i) | \theta_i] \geq E_{\theta_{-i}} [u_i(f(\hat{\theta}_i, \theta_{-i}), \theta_i) | \theta_i]
+    \end{equation*}
+    for all $\hat{\theta}_i \in \Theta_i$.
+\end{defn}
+
+\begin{prop}[The Revelation Principle for Bayesian Nash Equilibrium]
+    Suppose that there exists a mechanism $\Gamma = (S_1, \dots, S_I, g(\cdot))$ that implements the social choice function $f(\cdot)$ in Bayesian Nash equilibrium. Then $f(\cdot)$ is truthfully implementable in Bayesian Nash equilibrium.
+\end{prop}
+
+\begin{prop}
+    The social choice function $f(\cdot) = (k(\cdot), t_1(\cdot), \dots, t_I(\cdot))$ is Bayesian incentive compatible if and only if, for all $i = 1, \dots, I$,
+    \begin{enumerate}
+        \item $\bar{v}_i (\cdot)$ is nondecreasing.
+        \item $U_i(\theta_i) = U_i(\ubar{\theta}_i) + \int_{\ubar{\theta}_i}^{\theta_i} \bar{v}_i (s) ds$ for all $\theta_i$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}[The Revenue Equivalence Theorem]
+    Consider an auction setting with $I$ risk-neutral buyers, in which buyer $i$'s valuation is drawn from an interval $[\ubar{\theta}_i, \theta_i]$ with $\ubar{\theta}_i \neq \theta_i$ and a strictly positive density $\phi(\cdot) > 0$, and in which buyers' types are statistically independent. Suppose that a given pair of Bayesian Nash equilibria of two different auction procedures are such that for every buyer $i$: (i) For each possible realisation of $(\theta_i, \dots, \theta_I)$, buyer $i$ has an identical probability of getting the good in the two auctions; and (ii) Buyer $i$ has the same expected utility level on the two auctions when his valuation for the object is at its lowest possible level. Then these equilibria of the two auction generate the same expected revenue for the seller.
+\end{prop}
+
+
+\section{Participation Constraints}
+
+\begin{prop}[The Myerson Satterthwaite Theorem]
+    Consider a bilateral trade setting in which the buyer and seller are risk neutral, the valuations $\theta_1$ and $\theta_2$ are independently drawn from the intervals $[\ubar{\theta}_1, \bar{\theta}_1] \subset \mathbb{R}$ and $[\ubar{\theta}_2, \bar{\theta}_2] \subset \mathbb{R}$ with strictly positive densities, and $(\ubar{\theta}_1, \bar{\theta}_1) \cap (\ubar{\theta}_2, \bar{\theta}_2) \neq \emptyset$. Then there is no Bayesian incentive compatible social choice function that is ex post efficient and gives every buyer type and every seller type nonnegative expected gains from participation.
+\end{prop}
+
+
+\section{Optimal Bayesian Mechanisms}
+
+\begin{defn}
+    Given any set of feasible social choice functions $F$, the social choice function $f(\cdot) \in F$ is \emph{ex ante efficient in} $F$ if there is no $\hat{f}(\cdot) \in F$ having the property that $U_i(\hat{f}) \geq U_i(f)$ for all $i = 1, \dots, I$, and $U_i(\hat{f}) > U_i(f)$ for some $i$.
+\end{defn}
+
+\begin{defn}
+    Given any set of feasible social choice functions $F$, the social choice function $f(\cdot) \in F$ is \emph{interim efficient in} $F$ if there is no $\hat{f}(\cdot) \in F$ having the property that $U_i(\theta_i | \hat{f}) \geq U_i(\theta_i | f)$ for all $\theta_i \in \Theta_i$ and all $i = 1, \dots, I$, and $U_i(\theta_i | \hat{f}) > U_i(\theta_i | f)$ for some $i$ and $\theta_i \in \Theta_i$.
+\end{defn}
+
+\begin{prop}
+    Given any set of feasible social functions $F$, if the social choice function $f(\cdot) \in F$ is ex ante efficient in $F$, then it is also interim efficient in $F$.
+\end{prop}
+
+\begin{defn}
+    Given any set of feasible social choice functions $F$, the social choice function $f(\cdot) \in F$ is \emph{ex post efficient in} $F$ if there is no $\hat{f}(\cdot) \in F$ having the property that $u_i(\hat{f}(\theta), \theta_i) \geq u_i(f(\theta), \theta_i)$ for all $i = 1, \dots, I$ and all $\theta \in \Theta$, and $u_i(\hat{f}(\theta), \theta_i) > u_i(f(\theta), \theta_i)$ for some $i$ and $\theta \in \Theta$.
+\end{defn}
